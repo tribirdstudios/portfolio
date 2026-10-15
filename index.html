@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TriBird Studios — Music for games</title>
+<meta name="description" content="Original music for indie games: folk, orchestral and chiptune scores by TriBird Studios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF2EA;          /* lichen */
+    --surface: #E1E8DB;
+    --text: #17301F;        /* forest */
+    --muted: #4B6352;
+    --line: #B9C7B5;
+    --jay: #2F67B0;         /* blue jay */
+    --cardinal: #B3261E;    /* cardinal */
+    --hummer: #1E8A6E;      /* hummingbird */
+    --link: #2F67B0;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #13261A; --surface: #1B3424; --text: #E6EEE2; --muted: #A8BCAB;
+      --line: #2E4A37; --jay: #6C9FE0; --cardinal: #E0574D; --hummer: #4CC9A4;
+      --link: #8DB6EC; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #13261A; --surface: #1B3424; --text: #E6EEE2; --muted: #A8BCAB;
+    --line: #2E4A37; --jay: #6C9FE0; --cardinal: #E0574D; --hummer: #4CC9A4;
+    --link: #8DB6EC; color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 400 1.125rem/1.6 "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+  }
+  img, iframe { max-width: 100%; }
+  a { color: var(--link); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--hummer); outline-offset: 3px; border-radius: 2px; }
+  h1, h2 { font-family: "Uncial Antiqua", Georgia, serif; font-weight: 400; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(1.75rem, 4vw, 2.4rem); margin-bottom: 1rem; }
+  h3 { font-size: 1.3rem; margin: 0 0 .35rem; }
+  p { margin: 0 0 1rem; max-width: 62ch; }
+  .wrap { width: min(1040px, 100% - 2.5rem); margin-inline: auto; }
+  section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+
+  /* Nav */
+  nav { display: flex; justify-content: space-between; align-items: center; padding-block: 1.25rem; gap: 1rem; flex-wrap: wrap; }
+  nav .brand { display: flex; align-items: center; gap: .6rem; color: var(--text); text-decoration: none; font-weight: 700; }
+  nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  nav ul a { color: var(--text); text-decoration: none; }
+  nav ul a:hover { text-decoration: underline; }
+
+  /* Hero: the three birds are the one bold move */
+  .hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 2rem; padding-block: clamp(3rem, 9vw, 7rem); }
+  .hero h1 { font-size: clamp(3rem, 9vw, 6.25rem); }
+  .hero .lede { font-size: clamp(1.2rem, 2.4vw, 1.45rem); color: var(--muted); margin-top: 1.25rem; }
+  .birds { width: 100%; max-width: 380px; justify-self: center; }
+  .birds circle.b { transform-origin: center; transform-box: fill-box; animation: perch .9s cubic-bezier(.3,1.6,.5,1) both; }
+  .birds circle.b:nth-of-type(2) { animation-delay: .15s; }
+  .birds circle.b:nth-of-type(3) { animation-delay: .3s; }
+  @keyframes perch { from { transform: scale(0); } to { transform: scale(1); } }
+  @media (prefers-reduced-motion: reduce) { .birds circle.b { animation: none; } }
+
+  .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }
+  .btn { display: inline-block; padding: .75rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid var(--text); color: var(--text); }
+  .btn.primary { background: var(--text); color: var(--bg); }
+  .btn:hover { background: var(--surface); color: var(--text); }
+
+  /* Listen */
+  .player { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  .player iframe { display: block; width: 100%; height: 400px; border: 0; }
+
+  /* Projects: each tied to one bird colour */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2.25rem; margin-top: 2rem; }
+  .project { padding-left: 1.1rem; border-left: 4px solid var(--c); }
+  .project .tag { color: var(--muted); font-size: .95rem; margin-bottom: .5rem; display: block; }
+  .project p { font-size: 1.05rem; }
+
+  /* Commissions */
+  .offer { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .offer ul { padding-left: 1.2rem; margin: 0; }
+  .offer li { margin-bottom: .5rem; }
+
+  /* Contact */
+  .contact { background: var(--surface); }
+  .socials { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+  footer { padding-block: 2rem; color: var(--muted); font-size: .95rem; }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; }
+    .birds { max-width: 240px; order: -1; justify-self: start; }
+    .offer { grid-template-columns: 1fr; }
+    nav ul { gap: 1rem; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="#top">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="22" r="14" fill="var(--jay)"/>
+        <circle cx="24" cy="70" r="14" fill="var(--cardinal)"/>
+        <circle cx="76" cy="70" r="14" fill="var(--hummer)"/>
+      </svg>
+      TriBird Studios
+    </a>
+    <ul>
+      <li><a href="#listen">Listen</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#commissions">Commissions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>TriBird Studios</h1>
+      <p class="lede">Original music for indie games — tavern jigs, orchestral themes and chiptune, written to fit your world.</p>
+      <div class="actions">
+        <a class="btn primary" href="#listen">Listen to tracks</a>
+        <a class="btn" href="#commissions">Commission music</a>
+      </div>
+    </div>
+    <!-- Swap this SVG for your real logo file later: <img src="logo.svg" alt=""> -->
+    <svg class="birds" viewBox="0 0 200 200" role="img" aria-label="Three birds in a triangle: a blue jay, a cardinal and a hummingbird">
+      <path d="M100 38 L42 138 L158 138 Z" fill="none" stroke="var(--line)" stroke-width="3" stroke-linejoin="round"/>
+      <circle class="b" cx="100" cy="38" r="26" fill="var(--jay)"/>
+      <circle class="b" cx="42" cy="138" r="26" fill="var(--cardinal)"/>
+      <circle class="b" cx="158" cy="138" r="26" fill="var(--hummer)"/>
+    </svg>
+  </div>
+
+  <section id="listen">
+    <div class="wrap">
+      <h2>Listen</h2>
+      <p>A selection of recent work. Everything here is available to license, or as a starting point for something written just for your game.</p>
+      <div class="player">
+        <!-- In SoundCloud: open your profile or a playlist → Share → Embed → copy the src URL and paste it below -->
+        <iframe title="TriBird Studios on SoundCloud" loading="lazy" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/YOUR-SOUNDCLOUD-NAME&color=%2317301f&visual=false&show_comments=false"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project" style="--c: var(--jay)">
+          <span class="tag">Album, 10 tracks</span>
+          <h3>Songs for Games That Don't Exist — Volume I</h3>
+          <p>Every track starts with a spin of the wheel: genre, mood and setting chosen at random, then scored as if the game were real.</p>
+          <a href="#">Listen to the album</a>
+        </article>
+        <article class="project" style="--c: var(--cardinal)">
+          <span class="tag">Game score, in progress</span>
+          <h3>Just Breathe</h3>
+          <p>Music for a text-based post-apocalyptic RPG — sparse, tense themes for a world running out of air.</p>
+        </article>
+        <article class="project" style="--c: var(--hummer)">
+          <span class="tag">Concept album, coming soon</span>
+          <h3>Ore</h3>
+          <p>Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="commissions">
+    <div class="wrap offer">
+      <div>
+        <h2>Commissions</h2>
+        <p>I write music for indie games, tabletop campaigns and anything else that needs a soundtrack. Tell me about your project and I'll reply with ideas, a timeline and a quote.</p>
+        <a class="btn primary" href="mailto:hello@YOURDOMAIN.com?subject=Music%20commission">Email about a commission</a>
+      </div>
+      <div>
+        <h3>What I can make</h3>
+        <ul>
+          <li>Looping background music for levels, towns and menus</li>
+          <li>Battle and boss themes</li>
+          <li>Chiptune and 8-bit versions of any track</li>
+          <li>Ambient beds for D&amp;D and tabletop sessions</li>
+          <li>Short stingers for victories, deaths and discoveries</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p>The fastest way to reach me is email: <a href="mailto:hello@YOURDOMAIN.com">hello@YOURDOMAIN.com</a></p>
+      <ul class="socials">
+        <li><a href="https://soundcloud.com/YOUR-SOUNDCLOUD-NAME">SoundCloud</a></li>
+        <li><a href="https://instagram.com/YOUR-HANDLE">Instagram</a></li>
+        <li><a href="https://tiktok.com/@YOUR-HANDLE">TikTok</a></li>
+        <li><a href="https://ko-fi.com/YOUR-HANDLE">Support me on Ko-fi</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  © <span id="year">2026</span> TriBird Studios
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
