@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TriBird Studios — Music for games</title>
-<meta name="description" content="Original music for indie games: folk, orchestral and chiptune scores by TriBird Studios.">
+<meta name="description" content="Original music for your worlds: games, films and D&amp;D campaigns, by TriBird Studios.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
 
   *, *::before, *::after { box-sizing: border-box; }
   :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
-  html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     margin: 0; background: var(--bg); color: var(--text);
@@ -52,23 +52,52 @@
   .wrap { width: min(1040px, 100% - 2.5rem); margin-inline: auto; }
   section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
 
+
+  /* Intro: spin, fling, reveal */
+  #intro { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: grid; place-items: center; overflow: hidden; cursor: pointer; transition: opacity .5s ease, visibility .5s; }
+  #intro.done { opacity: 0; visibility: hidden; }
+  #intro > * { grid-area: 1 / 1; }
+  .spin { position: relative; width: 180px; height: 180px; animation: spin 1.2s cubic-bezier(.55,0,.8,.45) forwards; }
+  .dot { position: absolute; width: 52px; height: 52px; border-radius: 50%; background: var(--c); animation: fling .65s cubic-bezier(.3,0,.2,1) 1.2s forwards; }
+  .dot.d1 { left: 64px; top: 6px;   --fx: 0;      --fy: -90vmax; }
+  .dot.d2 { left: 12px; top: 112px; --fx: -78vmax; --fy: 45vmax; }
+  .dot.d3 { left: 116px; top: 112px; --fx: 78vmax; --fy: 45vmax; }
+  .intro-logo { font-family: "Uncial Antiqua", Georgia, serif; font-size: clamp(2.4rem, 8vw, 4.5rem); color: var(--text); text-align: center; opacity: 0; transform: scale(.6); animation: logo-in .7s cubic-bezier(.2,1.4,.4,1) 1.35s forwards; }
+  .intro-logo img { width: min(220px, 55vw); height: auto; display: block; margin: 0 auto .75rem; }
+  @keyframes spin { from { transform: rotate(0); } to { transform: rotate(720deg); } }
+  @keyframes fling { to { transform: translate(var(--fx), var(--fy)) scale(1.8); } }
+  @keyframes logo-in { to { opacity: 1; transform: scale(1); } }
+
   /* Nav */
-  nav { display: flex; justify-content: space-between; align-items: center; padding-block: 1.25rem; gap: 1rem; flex-wrap: wrap; }
+  header.site {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent; transition: border-color .3s;
+  }
+  header.site.scrolled { border-bottom-color: var(--line); }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 51; background: var(--bg); }
+  nav { display: flex; justify-content: space-between; align-items: center; padding-block: .75rem; gap: .5rem 1rem; flex-wrap: wrap; }
   nav .brand { display: flex; align-items: center; gap: .6rem; color: var(--text); text-decoration: none; font-weight: 700; }
-  nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
-  nav ul a { color: var(--text); text-decoration: none; }
-  nav ul a:hover { text-decoration: underline; }
+  .links { position: relative; overflow-x: auto; scrollbar-width: none; max-width: 100%; }
+  .links::-webkit-scrollbar { display: none; }
+  .links ul { position: relative; z-index: 1; display: flex; gap: .15rem; list-style: none; margin: 0; padding: 0; white-space: nowrap; }
+  .links a { display: block; padding: .35rem .85rem; border-radius: 999px; color: var(--text); text-decoration: none; font-weight: 500; transition: color .3s; }
+  .links a:hover { background: var(--surface); }
+  .links a.active, .links a.active:hover { color: var(--bg); background: transparent; }
+  .pill {
+    position: absolute; top: 0; left: 0; height: 0; width: 0; border-radius: 999px;
+    background: var(--jay); opacity: 0; pointer-events: none;
+    transition: transform .45s cubic-bezier(.3,1.25,.5,1), width .45s cubic-bezier(.3,1.25,.5,1), background-color .45s ease, opacity .25s;
+  }
+  @media (prefers-reduced-motion: reduce) { .pill { transition: opacity .2s; } }
 
   /* Hero: the three birds are the one bold move */
   .hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 2rem; padding-block: clamp(3rem, 9vw, 7rem); }
   .hero h1 { font-size: clamp(3rem, 9vw, 6.25rem); }
   .hero .lede { font-size: clamp(1.2rem, 2.4vw, 1.45rem); color: var(--muted); margin-top: 1.25rem; }
   .birds { width: 100%; max-width: 380px; justify-self: center; }
-  .birds circle.b { transform-origin: center; transform-box: fill-box; animation: perch .9s cubic-bezier(.3,1.6,.5,1) both; }
-  .birds circle.b:nth-of-type(2) { animation-delay: .15s; }
-  .birds circle.b:nth-of-type(3) { animation-delay: .3s; }
-  @keyframes perch { from { transform: scale(0); } to { transform: scale(1); } }
-  @media (prefers-reduced-motion: reduce) { .birds circle.b { animation: none; } }
+  .birds { height: auto; }
 
   .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }
   .btn { display: inline-block; padding: .75rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid var(--text); color: var(--text); }
@@ -84,6 +113,12 @@
   .project { padding-left: 1.1rem; border-left: 4px solid var(--c); }
   .project .tag { color: var(--muted); font-size: .95rem; margin-bottom: .5rem; display: block; }
   .project p { font-size: 1.05rem; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1fr minmax(0, 280px); gap: 1rem 3rem; align-items: start; }
+  .about h2 { grid-column: 1 / -1; }
+  .about-text p { font-size: 1.15rem; line-height: 1.7; }
+  .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; border: 4px solid var(--surface); }
 
   /* Commissions */
   .offer { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
@@ -105,29 +140,56 @@
   @media (max-width: 760px) {
     .hero { grid-template-columns: 1fr; }
     .birds { max-width: 240px; order: -1; justify-self: start; }
-    .offer { grid-template-columns: 1fr; }
-    nav ul { gap: 1rem; font-size: 1rem; }
+    .offer, .about { grid-template-columns: 1fr; }
+    .links { width: 100%; margin-inline: -.85rem; width: calc(100% + 1.7rem); }
+    .links a { font-size: 1rem; }
   }
 </style>
 </head>
 <body>
+<div id="intro" aria-hidden="true">
+  <div class="spin">
+    <span class="dot d1" style="--c: var(--jay)"></span>
+    <span class="dot d2" style="--c: var(--cardinal)"></span>
+    <span class="dot d3" style="--c: var(--hummer)"></span>
+  </div>
+  <div class="intro-logo"><img src="No%20Text%20Logo.png" alt="">TriBird Studios</div>
+</div>
+<script>
+  (function () {
+    var intro = document.getElementById('intro');
+    var seen = false;
+    try { seen = sessionStorage.getItem('tb-intro') === '1'; } catch (e) {}
+    if (seen || matchMedia('(prefers-reduced-motion: reduce)').matches) { intro.remove(); return; }
+    try { sessionStorage.setItem('tb-intro', '1'); } catch (e) {}
+    var finished = false;
+    function end() {
+      if (finished) return; finished = true;
+      intro.classList.add('done');
+      setTimeout(function () { intro.remove(); }, 600);
+    }
+    setTimeout(end, 2800);
+    intro.addEventListener('click', end);
+    addEventListener('keydown', end, { once: true });
+  })();
+</script>
 
-<header class="wrap">
-  <nav aria-label="Main">
+<header class="site">
+  <nav class="wrap" aria-label="Main">
     <a class="brand" href="#top">
-      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="22" r="14" fill="var(--jay)"/>
-        <circle cx="24" cy="70" r="14" fill="var(--cardinal)"/>
-        <circle cx="76" cy="70" r="14" fill="var(--hummer)"/>
-      </svg>
+      <img src="No%20Text%20Logo.png" alt="" width="36" height="36" style="object-fit: contain;">
       TriBird Studios
     </a>
-    <ul>
-      <li><a href="#listen">Listen</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#commissions">Commissions</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="links">
+      <span class="pill" aria-hidden="true"></span>
+      <ul>
+        <li><a href="#listen" data-c="--jay">Listen</a></li>
+        <li><a href="#projects" data-c="--cardinal">Projects</a></li>
+        <li><a href="#about" data-c="--hummer">About</a></li>
+        <li><a href="#commissions" data-c="--jay">Commissions</a></li>
+        <li><a href="#contact" data-c="--cardinal">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -135,25 +197,19 @@
   <div class="wrap hero">
     <div>
       <h1>TriBird Studios</h1>
-      <p class="lede">Original music for indie games — tavern jigs, orchestral themes and chiptune, written to fit your world.</p>
+      <p class="lede">Original music for your worlds. Games, films, D&amp;D campaigns. Music is what gives a world its shape.</p>
       <div class="actions">
         <a class="btn primary" href="#listen">Listen to tracks</a>
         <a class="btn" href="#commissions">Commission music</a>
       </div>
     </div>
-    <!-- Swap this SVG for your real logo file later: <img src="logo.svg" alt=""> -->
-    <svg class="birds" viewBox="0 0 200 200" role="img" aria-label="Three birds in a triangle: a blue jay, a cardinal and a hummingbird">
-      <path d="M100 38 L42 138 L158 138 Z" fill="none" stroke="var(--line)" stroke-width="3" stroke-linejoin="round"/>
-      <circle class="b" cx="100" cy="38" r="26" fill="var(--jay)"/>
-      <circle class="b" cx="42" cy="138" r="26" fill="var(--cardinal)"/>
-      <circle class="b" cx="158" cy="138" r="26" fill="var(--hummer)"/>
-    </svg>
+    <img class="birds" src="No%20Text%20Logo.png" alt="TriBird Studios logo">
   </div>
 
   <section id="listen">
     <div class="wrap">
       <h2>Listen</h2>
-      <p>A selection of recent work. Everything here is available to license, or as a starting point for something written just for your game.</p>
+      <p>Recent releases.</p>
       <div class="player">
         <!-- Spotify artist player. To show a single album or track instead: in Spotify, Share → Embed, and copy the src URL here -->
         <iframe title="TriBird Studios on Spotify" loading="lazy"
@@ -168,17 +224,29 @@
       <h2>Projects</h2>
       <div class="projects">
         <article class="project" style="--c: var(--jay)">
-          <span class="tag">Album, 10 tracks</span>
+          <span class="tag">Concept album, 12 tracks</span>
           <h3>Songs for Games That Don't Exist — Volume I</h3>
-          <p>Every track starts with a spin of the wheel: genre, mood and setting chosen at random, then scored as if the game were real.</p>
+          <p>I spun a set of wheels to choose the genre, mood and instruments for each track, as a way to practice writing in every style. The twelve results became my first concept album.</p>
           <a href="#">Listen to the album</a>
         </article>
         <article class="project" style="--c: var(--cardinal)">
           <span class="tag">Concept album, coming soon</span>
           <h3>Ore</h3>
-          <p>Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone.</p>
+          <p>My second concept album. Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <h2>About</h2>
+      <div class="about-text">
+        <p>I'm Nick, the musician and composer behind TriBird Studios. Music has always been a major part of my life, with 20 years of piano training, 15 of violin, and some experience on other instruments. During my studies I won several local piano competitions and trained under the composer and pianist <a href="https://en.wikipedia.org/wiki/Joseph_Fennimore">Joseph Fennimore</a>.</p>
+        <p>I started composing to combine two of my passions: music, and video games and film. I believe music can lift visual media to a new level, creating deeper immersion and emotion for the audience.</p>
+      </div>
+      <!-- To add a photo: put photo.jpg in the repo next to index.html, then uncomment the next line -->
+      <!-- <img class="portrait" src="photo.jpg" alt="Nick, composer at TriBird Studios"> -->
     </div>
   </section>
 
@@ -186,12 +254,12 @@
     <div class="wrap offer">
       <div>
         <h2>Commissions</h2>
-        <p>I write music for indie games, tabletop campaigns and anything else that needs a soundtrack. Every piece is written for your project, not pulled from a library.</p>
+        <p>I write original music for indie games, short films, documentaries, tabletop campaigns, and anything else that needs a soundtrack. Every piece is written specifically for your project.</p>
         <h3>How it works</h3>
         <ol class="steps">
-          <li><strong>Tell me about your world.</strong> Genre, mood, references, and where the music will play.</li>
-          <li><strong>I send a sketch.</strong> A short draft of the main idea so we agree on direction early.</li>
-          <li><strong>We refine it together.</strong> Revisions until it fits, then final files delivered in the format your engine or table needs.</li>
+          <li><strong>Tell me about your project.</strong> The genre, mood, any references you like, and where the music will be used.</li>
+          <li><strong>I send a sketch.</strong> A short draft of the main idea, so we agree on a direction early.</li>
+          <li><strong>We refine it together.</strong> We go through revisions until it fits, and then I deliver the final files in whatever format you need.</li>
         </ol>
         <a class="btn primary" href="mailto:hello@tribirdstudios.com?subject=Music%20commission">Email about a commission</a>
       </div>
@@ -200,19 +268,23 @@
         <dl class="services">
           <div style="--c: var(--jay)">
             <dt>Game soundtracks</dt>
-            <dd>Themes for towns, dungeons, menus and boss fights, written to loop seamlessly so players never hear the seam.</dd>
+            <dd>Music for towns, dungeons, menus and boss fights, written to loop seamlessly.</dd>
           </div>
           <div style="--c: var(--cardinal)">
-            <dt>Tabletop and D&amp;D music</dt>
-            <dd>Scene-setting pieces for your campaign: a crowded tavern, a storm at sea, the moment the dragon wakes.</dd>
+            <dt>Short films and documentaries</dt>
+            <dd>Scores written to picture, from a few minutes of underscore to a full soundtrack that follows the story.</dd>
           </div>
           <div style="--c: var(--hummer)">
+            <dt>Tabletop and D&amp;D music</dt>
+            <dd>Music for the key scenes of your campaign, from a busy tavern to the final boss fight.</dd>
+          </div>
+          <div style="--c: var(--muted)">
             <dt>Chiptune and retro</dt>
-            <dd>Authentic 8-bit sound, either as original tracks or as retro versions of music you already have.</dd>
+            <dd>Original 8-bit tracks, or retro versions of music you already have.</dd>
           </div>
           <div style="--c: var(--muted)">
             <dt>Stingers and short cues</dt>
-            <dd>The small moments that make a game feel finished: victory fanfares, game-over themes, discovery chimes.</dd>
+            <dd>Short pieces for key moments, like victory fanfares, game-over themes and discovery chimes.</dd>
           </div>
         </dl>
       </div>
@@ -239,6 +311,48 @@
 </footer>
 
 <script>
+  (function () {
+    var header = document.querySelector('header.site');
+    var box = header.querySelector('.links');
+    var pill = box.querySelector('.pill');
+    var links = Array.prototype.slice.call(box.querySelectorAll('a'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    var current = null;
+
+    function place(a) {
+      if (!a) { pill.style.opacity = 0; return; }
+      pill.style.width = a.offsetWidth + 'px';
+      pill.style.height = a.offsetHeight + 'px';
+      pill.style.transform = 'translate(' + a.offsetLeft + 'px,' + a.offsetTop + 'px)';
+      pill.style.backgroundColor = 'var(' + a.dataset.c + ')';
+      pill.style.opacity = 1;
+    }
+
+    function update() {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+      var line = window.innerHeight * 0.35, idx = -1;
+      sections.forEach(function (sec, i) { if (sec && sec.getBoundingClientRect().top <= line) idx = i; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) idx = links.length - 1;
+      var a = idx >= 0 ? links[idx] : null;
+      if (a === current) return;
+      if (current) { current.classList.remove('active'); current.removeAttribute('aria-current'); }
+      current = a;
+      if (a) {
+        a.classList.add('active'); a.setAttribute('aria-current', 'true');
+        if (box.scrollWidth > box.clientWidth) box.scrollTo({ left: a.offsetLeft - box.clientWidth / 2 + a.offsetWidth / 2, behavior: 'smooth' });
+      }
+      place(a);
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; update(); }); }
+    }, { passive: true });
+    window.addEventListener('resize', function () { place(current); update(); });
+    if (document.fonts) document.fonts.ready.then(function () { place(current); });
+    update();
+  })();
+
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
