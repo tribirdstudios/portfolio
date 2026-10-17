@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found — TriBird Studios</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#13261A">
+<link rel="icon" href="/No%20Text%20Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF2EA; --surface: #E1E8DB; --text: #17301F; --muted: #4B6352;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #13261A; --surface: #1B3424; --text: #E6EEE2; --muted: #A8BCAB; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #13261A; --surface: #1B3424; --text: #E6EEE2; --muted: #A8BCAB; color-scheme: dark; }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 400 1.125rem/1.6 "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+    display: grid; place-items: center; text-align: center; padding: 2rem 1.25rem;
+  }
+  main { max-width: 32rem; }
+  img { width: min(200px, 50vw); height: auto; display: block; margin: 0 auto 1.5rem; }
+  .code { font-weight: 700; letter-spacing: .15em; color: var(--muted); margin: 0; }
+  h1 { font-family: "Uncial Antiqua", Georgia, serif; font-weight: 400; font-size: clamp(2.2rem, 7vw, 3.25rem); line-height: 1.15; margin: .25rem 0 1rem; }
+  p { color: var(--muted); margin: 0 0 2rem; }
+  p a { color: var(--text); text-underline-offset: 3px; }
+  .btn { display: inline-block; padding: .75rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid var(--text); background: var(--text); color: var(--bg); }
+  .btn:hover { background: var(--surface); color: var(--text); }
+  .btn:focus-visible { outline: 3px solid var(--muted); outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <main>
+    <img src="/No%20Text%20Logo.png" alt="">
+    <p class="code">404</p>
+    <h1>Page not found</h1>
+    <p>This page doesn't exist. Like the games on <a href="https://open.spotify.com/album/3WBeSrrkZa0GJB52iRVq2J">my first album</a>.</p>
+    <a class="btn" href="/">Back to TriBird Studios</a>
+  </main>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9d699a7fc7a8421c90a7695dc02c14a3"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
