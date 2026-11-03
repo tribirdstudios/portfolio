@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TriBird Studios — Original music for your worlds</title>
-<meta name="description" content="Original music for your worlds: games, films and D&amp;D campaigns, by TriBird Studios.">
+<title>TriBird Studios — Original music for your worlds | Game composer</title>
+<meta name="description" content="I'm Nick, a composer writing original music for games, films and D&amp;D campaigns. Any genre, with seamless loops and stems. Commissions are open.">
+<link rel="canonical" href="https://tribirdstudios.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TriBird Studios">
 <meta property="og:url" content="https://tribirdstudios.com/">
 <meta property="og:title" content="TriBird Studios">
-<meta property="og:description" content="Original music for your worlds. Games, films, D&amp;D campaigns.">
+<meta property="og:description" content="Original music for your worlds. Games, films, D&amp;D campaigns. Commissions are open.">
 <meta property="og:image" content="https://tribirdstudios.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -119,6 +120,8 @@
   /* Listen */
   .player { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
   .player iframe { display: block; width: 100%; height: 352px; border: 0; }
+  .start-here { margin-bottom: 2.5rem; }
+  .player.compact iframe { height: 152px; }
 
   .videos-title { margin-top: 2.5rem; margin-bottom: 1rem; }
   .video { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16 / 9; }
@@ -166,7 +169,33 @@
     .links { width: 100%; margin-inline: -.85rem; width: calc(100% + 1.7rem); }
     .links a { font-size: 1rem; }
   }
+  /* Added Nov 2026 */
+  .status { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; margin-bottom: 1rem; }
+  .status::before { content: ""; width: .65rem; height: .65rem; border-radius: 50%; background: var(--hummer); }
+  .deliver { padding-left: 1.2rem; margin: 0 0 2rem; }
+  .deliver li { margin-bottom: .4rem; }
+  .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem 2rem; margin: 2.5rem 0 0; }
+  .package { padding-left: 1rem; border-left: 4px solid var(--c); }
+  .package p { font-size: 1.05rem; margin-bottom: .4rem; }
+  .package .price { font-weight: 700; color: var(--text); }
+  .brief { grid-column: 1 / -1; margin-top: 1rem; background: var(--surface); border-radius: 12px; padding: clamp(1.25rem, 4vw, 2rem); }
+  .brief form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; }
+  .brief label { display: grid; gap: .3rem; font-weight: 500; }
+  .brief .full { grid-column: 1 / -1; }
+  .brief input, .brief select, .brief textarea { font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .6rem .75rem; width: 100%; }
+  .brief textarea { min-height: 7.5rem; resize: vertical; }
+  .brief input:focus-visible, .brief select:focus-visible, .brief textarea:focus-visible { outline: 3px solid var(--hummer); outline-offset: 1px; }
+  .brief button { cursor: pointer; font: inherit; font-weight: 700; justify-self: start; }
+  .brief .note { color: var(--muted); font-size: .95rem; margin: .25rem 0 0; }
+  .faq { max-width: 70ch; }
+  .faq details { border-bottom: 1px solid var(--line); padding-block: .9rem; }
+  .faq summary { cursor: pointer; font-weight: 700; font-size: 1.15rem; }
+  .faq details p { margin: .6rem 0 0; }
+  @media (max-width: 760px) { .brief form { grid-template-columns: 1fr; } }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"TriBird Studios","url":"https://tribirdstudios.com/","logo":"https://tribirdstudios.com/No%20Text%20Logo.png","email":"hello@tribirdstudios.com","description":"Original game music in any genre, delivered as seamless loops, stems and adaptive layers.","founder":{"@type":"Person","name":"Nick","jobTitle":"Composer"},"sameAs":["https://www.instagram.com/tribirdstudios/","https://www.youtube.com/@TriBirdStudios","https://soundcloud.com/tribirdstudios","https://open.spotify.com/artist/2xtLBoMBWMckBk6G54xV4P","https://ko-fi.com/tribirdstudios"]}
+</script>
 </head>
 <body>
 <div id="intro" aria-hidden="true">
@@ -209,6 +238,7 @@
         <li><a href="#projects" data-c="--cardinal">Projects</a></li>
         <li><a href="#about" data-c="--hummer">About</a></li>
         <li><a href="#commissions" data-c="--jay">Commissions</a></li>
+        <li><a href="#faq" data-c="--hummer">FAQ</a></li>
         <li><a href="#contact" data-c="--cardinal">Contact</a></li>
       </ul>
     </div>
@@ -220,9 +250,10 @@
     <div>
       <h1>TriBird Studios</h1>
       <p class="lede">Original music for your worlds. Games, films, D&amp;D campaigns. Music is what gives a world its shape.</p>
+      <p class="lede">I can write in pretty much any genre, and my tracks are ready to go straight into your game, with seamless loops and stems.</p>
       <div class="actions">
-        <a class="btn primary" href="#listen">Listen to tracks</a>
-        <a class="btn" href="#commissions">Commission music</a>
+        <a class="btn primary" href="#commissions">Commission music</a>
+        <a class="btn" href="#listen">Listen to tracks</a>
       </div>
     </div>
     <img class="birds" src="No%20Text%20Logo.png" alt="TriBird Studios logo">
@@ -231,6 +262,14 @@
   <section id="listen">
     <div class="wrap">
       <h2>Listen</h2>
+      <div class="start-here">
+        <h3>Start here: Beneath the Tides</h3>
+        <p>My favorite track from Songs for Games That Don't Exist. If you only listen to one, make it this one.</p>
+        <div class="player compact">
+          <iframe title="Beneath the Tides by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            src="https://open.spotify.com/embed/track/0uNVMtYj9vyAEi0g1mxCXC?utm_source=generator"></iframe>
+        </div>
+      </div>
       <p>Recent releases.</p>
       <div class="player">
         <!-- Spotify artist player. To show a single album or track instead: in Spotify, Share → Embed, and copy the src URL here -->
@@ -238,8 +277,12 @@
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           src="https://open.spotify.com/embed/artist/2xtLBoMBWMckBk6G54xV4P?utm_source=generator"></iframe>
       </div>
-      <!-- To show videos once you've posted: delete the word hidden on the next line -->
-      <div class="videos" hidden>
+      <!-- GAME-READY DEMO: once your loop-and-layers video is on YouTube, paste its embed link below and delete the two comment lines around this block.
+      <h3 class="videos-title">Game-ready demo</h3>
+      <p>Here's one track the way it would actually work in a game. It loops seamlessly, and layers come in as things go from exploring to combat.</p>
+      <div class="video"><iframe title="Game-ready demo" loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe></div>
+      -->
+      <div class="videos">
         <h3 class="videos-title">Latest videos</h3>
       <!-- YouTube uploads playlist: updates automatically when a new video is posted -->
       <div class="video">
@@ -259,12 +302,20 @@
           <span class="tag">Concept album, 12 tracks</span>
           <h3>Songs for Games That Don't Exist — Volume I</h3>
           <p>I spun a set of wheels to choose the genre, mood and instruments for each track, as a way to practice writing in every style. The twelve results became my first concept album.</p>
-          <a href="https://open.spotify.com/album/3WBeSrrkZa0GJB52iRVq2J">Listen to the album</a>
+          <a href="https://open.spotify.com/album/3WBeSrrkZa0GJB52iRVq2J">Listen to the album</a> (start with <a href="https://open.spotify.com/track/0uNVMtYj9vyAEi0g1mxCXC">Beneath the Tides</a>)
         </article>
         <article class="project" style="--c: var(--cardinal)">
-          <span class="tag">Concept album, coming soon</span>
+          <span class="tag">Concept album, 12 tracks</span>
           <h3>Ore</h3>
-          <p>My second concept album. Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone.</p>
+          <p>My second concept album. Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone. All twelve tracks are up on my Instagram, and the full album is coming to streaming soon.</p>
+          <a href="https://www.instagram.com/tribirdstudios/">Hear them on Instagram</a>
+        </article>
+        <article class="project" style="--c: var(--hummer)">
+          <span class="tag">Commission, 7 tracks</span>
+          <h3>Steampunk D&amp;D campaign</h3>
+          <p>My first commission: seven tracks for a steampunk D&amp;D campaign, all tied together by one leitmotif. We locked in the theme first, then I carried it through every track, from the village to the darkest moments of the campaign.</p>
+          <!-- When the job closes, add the client's quote here, e.g.:
+          <p><em>"One line from the client."</em> — Client name or "D&amp;D campaign client"</p> -->
         </article>
       </div>
     </div>
@@ -286,14 +337,22 @@
     <div class="wrap offer">
       <div>
         <h2>Commissions</h2>
+        <p class="status">Commissions are open</p>
         <p>I write original music for indie games, short films, documentaries, tabletop campaigns, and anything else that needs a soundtrack. Every piece is written specifically for your project.</p>
+        <h3>What you'll get</h3>
+        <ul class="deliver">
+          <li>Tracks that loop seamlessly (WAV and OGG)</li>
+          <li>Stems, so you can mix or layer things yourself</li>
+          <li>Adaptive layers if you want them, like music that builds from exploring into combat</li>
+        </ul>
         <h3>How it works</h3>
         <ol class="steps">
           <li><strong>Tell me about your project.</strong> The genre, mood, any references you like, and where the music will be used.</li>
-          <li><strong>I send a sketch.</strong> A short draft of the main idea, so we agree on a direction early.</li>
-          <li><strong>We refine it together.</strong> We go through revisions until it fits, and then I deliver the final files in whatever format you need.</li>
+          <li><strong>I send a quote and a short agreement.</strong> Once the 50% deposit is in, you're booked.</li>
+          <li><strong>I send a sketch of the main theme.</strong> We agree on that before I write the full tracks, so we're on the same page early.</li>
+          <li><strong>We refine it together.</strong> You get two rounds of revisions, and then I send over the final files.</li>
         </ol>
-        <a class="btn primary" href="mailto:hello@tribirdstudios.com?subject=Music%20commission">Email about a commission</a>
+        <a class="btn primary" href="#brief">Tell me about your project</a>
       </div>
       <div>
         <h3>What I can make</h3>
@@ -319,6 +378,91 @@
             <dd>Short pieces for key moments, like victory fanfares, game-over themes and discovery chimes.</dd>
           </div>
         </dl>
+      </div>
+
+      <div class="packages" style="grid-column: 1 / -1">
+        <!-- PRICES: replace each "Ask for a quote" with your starting price, e.g. "From $300" -->
+        <div class="package" style="--c: var(--jay)">
+          <h3>Indie starter</h3>
+          <p>Three tracks for your game: a menu theme, an exploration track and a combat track, all looped, with stems.</p>
+          <p class="price">Ask for a quote</p>
+        </div>
+        <div class="package" style="--c: var(--cardinal)">
+          <h3>Tabletop pack</h3>
+          <p>A tavern theme, a battle theme and an exploration track for your campaign, at a set price.</p>
+          <p class="price">Ask for a quote</p>
+        </div>
+        <div class="package" style="--c: var(--muted)">
+          <h3>Game jam</h3>
+          <p>One looping track written during your jam. Just reach out before the jam starts.</p>
+          <p class="price">Ask for a quote</p>
+        </div>
+      </div>
+
+      <div class="brief" id="brief">
+        <h3>Tell me about your project</h3>
+        <p>Fill this out and it'll open an email to me with everything in it. I'll get back to you within two days.</p>
+        <form id="brief-form">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+          <label>Project type
+            <select name="type">
+              <option>Video game</option><option>Game jam</option><option>Film or video</option><option>D&amp;D or tabletop</option><option>Something else</option>
+            </select>
+          </label>
+          <label>Engine, if it's a game<input name="engine" placeholder="Unity, Unreal, GameMaker…"></label>
+          <label>How much music
+            <select name="amount">
+              <option>Not sure yet</option><option>1 track</option><option>2 to 5 tracks</option><option>6 or more tracks</option>
+            </select>
+          </label>
+          <label>Deadline<input name="deadline" placeholder="e.g. demo in March"></label>
+          <label>Budget (USD)
+            <select name="budget">
+              <option>Not sure yet</option><option>Under $250</option><option>$250 to $750</option><option>$750 to $2,000</option><option>Over $2,000</option>
+            </select>
+          </label>
+          <label>Link to your game or project<input name="link" type="url" placeholder="Steam, itch.io, a trailer…"></label>
+          <label class="full">Tell me about it<textarea name="details" placeholder="Genre, mood, any music you'd use as a reference, and where the tracks will go."></textarea></label>
+          <button class="btn primary full" type="submit">Open email</button>
+        </form>
+        <p class="note">If the email doesn't open, you can reach me directly at <a href="mailto:hello@tribirdstudios.com?subject=Music%20commission">hello@tribirdstudios.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <div class="faq">
+      <details>
+        <summary>How long does it take?</summary>
+        <p>Usually one to two weeks per track, depending on how long it is and how many you need. Put your deadline in the form and I'll let you know right away if I can make it work.</p>
+      </details>
+      <details>
+        <summary>How many revisions do I get?</summary>
+        <p>Two rounds per track, once we've agreed on the main theme. If you need more after that, we can work something out.</p>
+      </details>
+      <details>
+        <summary>Who owns the music?</summary>
+        <p>By default, you get a non-exclusive license to use the music in your project forever, and I keep the copyright. If you want exclusive rights or a full buyout, we can talk about that too. It just costs more.</p>
+      </details>
+      <details>
+        <summary>What files will I get?</summary>
+        <p>WAV and OGG, looped wherever it's needed, plus stems.</p>
+      </details>
+      <details>
+        <summary>How do payments work?</summary>
+        <p>50% up front to book your spot, and the rest when I deliver the final files. We'll put it all in a short agreement before I start.</p>
+      </details>
+      <details>
+        <summary>Do I need to credit you?</summary>
+        <p>Yes please! Just "Music by TriBird Studios" in your credits and on your store page.</p>
+      </details>
+      <details>
+        <summary>Can I use the music in videos or streams?</summary>
+        <p>Yep. Trailers, devlogs and streams of your project are all fine.</p>
+      </details>
       </div>
     </div>
   </section>
@@ -396,6 +540,23 @@
     window.addEventListener('resize', function () { place(current); update(); });
     if (document.fonts) document.fonts.ready.then(function () { place(current); });
     update();
+  })();
+
+  (function () {
+    var form = document.getElementById('brief-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = form.elements;
+      var lines = [
+        'Name: ' + f.name.value, 'Email: ' + f.email.value, 'Project type: ' + f.type.value,
+        'Engine: ' + (f.engine.value || '-'), 'Amount of music: ' + f.amount.value,
+        'Deadline: ' + (f.deadline.value || '-'), 'Budget: ' + f.budget.value,
+        'Link: ' + (f.link.value || '-'), '', f.details.value
+      ];
+      var subject = 'Project brief: ' + f.type.value + ' (' + f.name.value + ')';
+      location.href = 'mailto:hello@tribirdstudios.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    });
   })();
 
   document.getElementById('year').textContent = new Date().getFullYear();
