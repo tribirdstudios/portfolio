@@ -1,6 +1,6 @@
-# Commission status. Change "availability" to open, waitlist or closed.
-availability: open
+availability: closed
 status_open: Taking on new projects
 status_waitlist: Booking for later this year
 status_closed: Commissions are closed right now
-closed_message: I'm not taking new projects at the moment, but you can still send a request and I'll add you to the list.
+closed_message: I'm not taking new projects at the moment, but you can still
+  send a request and I'll add you to the list.
