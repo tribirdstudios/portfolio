@@ -1,0 +1,16 @@
+items:
+  - title: Game soundtracks
+    text: Music for towns, dungeons, menus and boss fights, written to loop seamlessly.
+    color: jay
+  - title: Short films and documentaries
+    text: Scores written to picture, from a few minutes of underscore to a full soundtrack that follows the story.
+    color: cardinal
+  - title: Tabletop and D&D music
+    text: Music for the key scenes of your campaign, from a busy tavern to the final boss fight.
+    color: hummer
+  - title: Chiptune and retro
+    text: Original 8-bit tracks, or retro versions of music you already have.
+    color: muted
+  - title: Stingers and short cues
+    text: Short pieces for key moments, like victory fanfares, game-over themes and discovery chimes.
+    color: muted

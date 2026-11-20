@@ -1,0 +1,15 @@
+# Site settings. You normally never need to touch this file.
+title: TriBird Studios
+url: https://www.tribirdstudios.com
+timezone: Europe/London
+permalink: /blog/:title/
+future: true        # a post dated "now" never gets hidden by a time-zone gap
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude:
+  - README.md
+  - .pages.yml
+  - Gemfile
+  - Gemfile.lock

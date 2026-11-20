@@ -1,0 +1,11 @@
+intro: Recent releases.
+# Each player becomes a tab. The first one loads straight away, the rest load when opened.
+# To add one: Spotify / SoundCloud / YouTube -> Share -> Embed, and paste the src address.
+players:
+  - name: Spotify
+    embed_url: https://open.spotify.com/embed/artist/2xtLBoMBWMckBk6G54xV4P?utm_source=generator
+  - name: SoundCloud (full tracks)
+    embed_url: https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tribirdstudios&color=%2317301f&visual=false&show_comments=false&hide_related=true
+videos:
+  show: false
+  channel_id: UC4rribjjryeXP6hMq0GTLIw

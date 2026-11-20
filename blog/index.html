@@ -1,0 +1,24 @@
+---
+layout: default
+title: Blog
+description: Behind-the-scenes notes from TriBird Studios. How the music gets made, what I'm working on, and what I'm learning.
+---
+<div class="wrap blog-head">
+  <h1>Blog</h1>
+  <p>Notes on how the music gets made.</p>
+</div>
+<div class="wrap">
+  {%- if site.posts.size > 0 %}
+  <ul class="post-list">
+    {%- for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
+      <h2><a href="{{ post.url }}">{{ post.title | escape }}</a></h2>
+      <p>{{ post.description | default: post.excerpt | strip_html | truncate: 180 }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="empty">No posts yet. Check back soon.</p>
+  {%- endif %}
+</div>

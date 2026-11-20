@@ -1,0 +1,20 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TriBird Studios</title>
+  <link href="{{ site.url }}/feed.xml" rel="self"/>
+  <link href="{{ site.url }}/"/>
+  <id>{{ site.url }}/</id>
+  <updated>{{ site.time | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+  {%- for post in site.posts limit: 20 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <id>{{ site.url }}{{ post.url }}</id>
+    <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+    <summary>{{ post.description | default: post.excerpt | strip_html | strip | truncate: 280 | xml_escape }}</summary>
+  </entry>
+  {%- endfor %}
+</feed>

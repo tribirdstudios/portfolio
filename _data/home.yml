@@ -1,0 +1,30 @@
+email: hello@tribirdstudios.com
+hero_lede: "Original music for your worlds. Games, films, D&D campaigns. Music is what gives a world its shape."
+hero_note: "Tell me what you're making and I'll reply personally."
+release:
+  show: true
+  tag: New release
+  title: "Songs for Games That Don't Exist, Vol. I"
+  text: Twelve tracks, each one decided by a spin of the wheels.
+  link_text: Listen now
+  url: https://open.spotify.com/album/3WBeSrrkZa0GJB52iRVq2J
+commissions_intro: "I write original music for indie games, short films, documentaries, tabletop campaigns, and anything else that needs a soundtrack. Every piece is written specifically for your project."
+steps:
+  - "**Tell me about your project.** The genre, mood, any references you like, and where the music will be used."
+  - "**I send a sketch.** A short draft of the main idea, so we agree on a direction early."
+  - "**We refine it together.** We go through revisions until it fits, and then I deliver the final files in whatever format you need."
+form_intro: "Tell me about your project and I'll get back to you personally, usually within a few days."
+budget_options:
+  - Under $150
+  - $150 – $500
+  - $500 – $1,500
+  - $1,500+
+  - Not sure yet
+about:
+  - "I'm Nick, the musician and composer behind TriBird Studios. Music has always been a major part of my life, with 20 years of piano training, 15 of violin, and some experience on other instruments. During my studies I won several local piano competitions and trained under the composer and pianist [Joseph Fennimore](https://en.wikipedia.org/wiki/Joseph_Fennimore)."
+  - "I started composing to combine two of my passions: music, and video games and film. I believe music can lift visual media to a new level, creating deeper immersion and emotion for the audience."
+about_photo: ""
+contact_text: "The fastest way to reach me is email:"
+support_title: Support TriBird Studios
+support_text: "TriBird Studios is independent. If you enjoy the music and want to help fund future albums, you can support me on Ko-fi."
+kofi_url: https://ko-fi.com/tribirdstudios

@@ -1,0 +1,28 @@
+{%- assign h = "" -%}
+{%- if page.url != "/" -%}{%- assign h = "/" -%}{%- endif -%}
+<header class="site">
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="{{ h }}#top" aria-label="TriBird Studios, back to top">
+      <img src="/No%20Text%20Logo.png" alt="" width="36" height="36" style="object-fit: contain;">
+    </a>
+    <div class="links">
+      <span class="pill" aria-hidden="true"></span>
+      <ul>
+        <li><a href="{{ h }}#listen" data-c="--jay">Listen</a></li>
+        <li><a href="{{ h }}#commissions" data-c="--cardinal">Commissions</a></li>
+        <li><a href="{{ h }}#projects" data-c="--hummer">Projects</a></li>
+        <li><a href="{{ h }}#about" data-c="--jay">About</a></li>
+        <li><a href="{{ h }}#contact" data-c="--cardinal">Contact</a></li>
+        {%- if site.posts.size > 0 %}
+        <li><a href="/blog/" data-c="--hummer"{% if page.layout == "post" or page.url == "/blog/" %} aria-current="page" style="text-decoration: underline; text-underline-offset: 6px;"{% endif %}>Blog</a></li>
+        {%- endif %}
+      </ul>
+      <div class="nav-socials">
+        {%- for l in site.data.links.items %}{% if l.in_header %}
+        <a href="{{ l.url }}" aria-label="TriBird Studios on {{ l.name | escape }}">{% assign icon_name = l.icon %}{% include icon.html %}</a>
+        {%- endif %}{% endfor %}
+      </div>
+    </div>
+    <a class="btn primary nav-cta" href="{{ h }}#commission-form">Commission</a>
+  </nav>
+</header>

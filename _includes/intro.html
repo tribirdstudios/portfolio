@@ -1,0 +1,26 @@
+<div id="intro" aria-hidden="true">
+  <div class="spin">
+    <span class="dot d1" style="--c: var(--jay)"></span>
+    <span class="dot d2" style="--c: var(--cardinal)"></span>
+    <span class="dot d3" style="--c: var(--hummer)"></span>
+  </div>
+  <div class="intro-logo"><img src="/No%20Text%20Logo.png" alt="" width="828" height="900">TriBird Studios</div>
+</div>
+<script>
+  (function () {
+    var intro = document.getElementById('intro');
+    var seen = false;
+    try { seen = sessionStorage.getItem('tb-intro') === '1'; } catch (e) {}
+    if (seen || location.hash || matchMedia('(prefers-reduced-motion: reduce)').matches) { intro.remove(); return; }
+    try { sessionStorage.setItem('tb-intro', '1'); } catch (e) {}
+    var finished = false;
+    function end() {
+      if (finished) return; finished = true;
+      intro.classList.add('done');
+      setTimeout(function () { intro.remove(); }, 600);
+    }
+    setTimeout(end, 2100);
+    intro.addEventListener('click', end);
+    addEventListener('keydown', end, { once: true });
+  })();
+</script>
