@@ -1,0 +1,64 @@
+deliver:
+  - Tracks that loop seamlessly (WAV and OGG)
+  - Adaptive layers if you want them, like music that builds from exploring into combat
+intro: "I write original music for indie games, short films, documentaries, tabletop campaigns, and anything else that needs a soundtrack. Every piece is written specifically for your project."
+steps:
+  - "**Tell me about your project.** The genre, mood, any references you like, and where the music will be used."
+  - "**I send a quote and a short agreement.** Once the 50% deposit is in, you're booked."
+  - "**I send a sketch of the main theme.** We agree on that before I write the full tracks, so we're on the same page early."
+  - "**We refine it together.** Revisions are included (how many depends on the size of the project), and then I send over the final files."
+services:
+  - title: Game soundtracks
+    text: Music for towns, dungeons, menus and boss fights, written to loop seamlessly.
+    color: jay
+  - title: Short films and documentaries
+    text: Scores written to picture, from a few minutes of underscore to a full soundtrack that follows the story.
+    color: cardinal
+  - title: Tabletop and D&D music
+    text: Music for the key scenes of your campaign, from a busy tavern to the final boss fight.
+    color: hummer
+  - title: Chiptune and retro
+    text: Original 8-bit tracks, or retro versions of music you already have.
+    color: muted
+  - title: Stingers and short cues
+    text: Short pieces for key moments, like victory fanfares, game-over themes and discovery chimes.
+    color: muted
+packages:
+  - title: Indie starter
+    text: "Three tracks for your game: a menu theme, an exploration track and a combat track, all looped."
+    color: jay
+  - title: Tabletop pack
+    text: A tavern theme, a battle theme and an exploration track for your campaign, at a set price.
+    color: cardinal
+  - title: Game jam
+    text: One looping track written during your jam. Just reach out before the jam starts.
+    color: muted
+  - title: Something else?
+    text: "Bigger soundtracks, trailers, stingers, or something I haven't listed here. It's all project dependent, so tell me what you need and we'll figure it out."
+    color: hummer
+pricing_note: "Every project's different, so we'll work out pricing together. Just tell me your budget in the form below."
+brief_intro: "Fill this out and send it, and I'll get back to you within two days."
+budget_options:
+  - Not sure yet
+  - Under $250
+  - $250 to $750
+  - $750 to $2,000
+  - Over $2,000
+faq:
+  - q: How long does it take?
+    a: "Usually one to two weeks per track, depending on how long it is and how many you need. Put your deadline in the form and I'll let you know right away if I can make it work."
+  - q: How many revisions do I get?
+    a: "It depends on the project. Smaller jobs usually get two rounds per track, and bigger projects get more. If you need extra rounds after that, I can add them on as you go, so you only pay for what you actually use."
+  - q: Who owns the music?
+    a: |
+      By default, you get a non-exclusive license to use the music in your project forever, and I keep the copyright. If you want exclusive rights or a full buyout, we can talk about that too. It just costs more.
+
+      Either way, I keep the right to show the tracks in my portfolio. If your project's still under wraps, I'll wait until it's announced.
+  - q: What files will I get?
+    a: "WAV and OGG, looped wherever it's needed. If you need something else, just ask."
+  - q: How do payments work?
+    a: "50% up front to book your spot, and the rest when I deliver the final files. We'll put it all in a short agreement before I start."
+  - q: Do I need to credit you?
+    a: "Yes please! Just \"Music by TriBird Studios\" in your credits and on your store page."
+  - q: Can I use the music in videos or streams?
+    a: "Yep. Trailers, devlogs and streams of your project are all fine."

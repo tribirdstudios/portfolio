@@ -1,354 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Portfolio | TriBird Studios</title>
-<meta name="description" content="Game tracks in every genre, a D&amp;D commission and OSTs Reimagined: original music by TriBird Studios.">
-<link rel="canonical" href="https://tribirdstudios.com/portfolio.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="TriBird Studios">
-<meta property="og:url" content="https://tribirdstudios.com/portfolio.html">
-<meta property="og:title" content="Portfolio | TriBird Studios">
-<meta property="og:description" content="Game tracks in every genre, a D&amp;D commission and OSTs Reimagined: original music by TriBird Studios.">
-<meta property="og:image" content="https://tribirdstudios.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tribirdstudios.com/og-image.png">
-<meta name="theme-color" content="#13261A">
-<link rel="icon" href="No%20Text%20Logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #EEF2EA;          /* lichen */
-    --surface: #E1E8DB;
-    --text: #17301F;        /* forest */
-    --muted: #4B6352;
-    --line: #B9C7B5;
-    --jay: #2F67B0;         /* blue jay */
-    --cardinal: #B3261E;    /* cardinal */
-    --hummer: #1E8A6E;      /* hummingbird */
-    --link: #2F67B0;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #13261A; --surface: #1B3424; --text: #E6EEE2; --muted: #A8BCAB;
-      --line: #2E4A37; --jay: #6C9FE0; --cardinal: #E0574D; --hummer: #4CC9A4;
-      --link: #8DB6EC; color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #13261A; --surface: #1B3424; --text: #E6EEE2; --muted: #A8BCAB;
-    --line: #2E4A37; --jay: #6C9FE0; --cardinal: #E0574D; --hummer: #4CC9A4;
-    --link: #8DB6EC; color-scheme: dark;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; }
-  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
-  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font: 400 1.125rem/1.6 "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
-  }
-  img, iframe { max-width: 100%; }
-  a { color: var(--link); text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible { outline: 3px solid var(--hummer); outline-offset: 3px; border-radius: 2px; }
-  h1, h2 { font-family: "Uncial Antiqua", Georgia, serif; font-weight: 400; line-height: 1.15; margin: 0; }
-  h2 { font-size: clamp(1.75rem, 4vw, 2.4rem); margin-bottom: 1rem; }
-  h3 { font-size: 1.3rem; margin: 0 0 .35rem; }
-  p { margin: 0 0 1rem; max-width: 62ch; }
-  .wrap { width: min(1040px, 100% - 2.5rem); margin-inline: auto; }
-  section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
-
-
-
-  /* Nav */
-  header.site {
-    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
-    background: color-mix(in srgb, var(--bg) 92%, transparent);
-    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-    border-bottom: 1px solid transparent; transition: border-color .3s;
-  }
-  header.site.scrolled { border-bottom-color: var(--line); }
-  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 51; background: var(--bg); }
-  nav { display: flex; justify-content: space-between; align-items: center; padding-block: .75rem; gap: .5rem 1rem; flex-wrap: wrap; }
-  nav .brand { display: flex; align-items: center; gap: .6rem; color: var(--text); text-decoration: none; font-weight: 700; }
-  .links { position: relative; overflow-x: auto; scrollbar-width: none; max-width: 100%; }
-  .links::-webkit-scrollbar { display: none; }
-  .links ul { position: relative; z-index: 1; display: flex; gap: .15rem; list-style: none; margin: 0; padding: 0; white-space: nowrap; }
-  .links a { display: block; padding: .35rem .85rem; border-radius: 999px; color: var(--text); text-decoration: none; font-weight: 500; transition: color .3s; }
-  .links a:hover { background: var(--surface); }
-  .links a.active, .links a.active:hover { color: var(--bg); background: transparent; }
-  .pill {
-    position: absolute; top: 0; left: 0; height: 0; width: 0; border-radius: 999px;
-    background: var(--jay); opacity: 0; pointer-events: none;
-    transition: transform .45s cubic-bezier(.3,1.25,.5,1), width .45s cubic-bezier(.3,1.25,.5,1), background-color .45s ease, opacity .25s;
-  }
-  @media (prefers-reduced-motion: reduce) { .pill { transition: opacity .2s; } }
-
-  /* Hero: the three birds are the one bold move */
-  .hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 2rem; padding-block: clamp(3rem, 9vw, 7rem); }
-  .hero h1 { font-size: clamp(3rem, 9vw, 6.25rem); }
-  .hero .lede { font-size: clamp(1.2rem, 2.4vw, 1.45rem); color: var(--muted); margin-top: 1.25rem; }
-  .birds { width: 100%; max-width: 380px; justify-self: center; }
-  .birds { height: auto; }
-
-  .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }
-  .btn { display: inline-block; padding: .75rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid var(--text); color: var(--text); }
-  .btn.primary { background: var(--text); color: var(--bg); }
-  .btn:hover { background: var(--surface); color: var(--text); }
-
-  /* Listen */
-  .player { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
-  .player iframe { display: block; width: 100%; height: 352px; border: 0; }
-  .start-here { margin-bottom: 2.5rem; }
-  .player.compact iframe { height: 152px; }
-
-  .videos-title { margin-top: 2.5rem; margin-bottom: 1rem; }
-  .video { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16 / 9; }
-  .video iframe { display: block; width: 100%; height: 100%; border: 0; }
-
-  /* Projects: each tied to one bird colour */
-  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2.25rem; margin-top: 2rem; }
-  .project { padding-left: 1.1rem; border-left: 4px solid var(--c); }
-  .project .tag { color: var(--muted); font-size: .95rem; margin-bottom: .5rem; display: block; }
-  .project p { font-size: 1.05rem; }
-
-  /* About */
-  .about { display: grid; grid-template-columns: 1fr minmax(0, 280px); gap: 1rem 3rem; align-items: start; }
-  .about h2 { grid-column: 1 / -1; }
-  .about-text p { font-size: 1.15rem; line-height: 1.7; }
-  .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; border: 4px solid var(--surface); }
-
-  /* Commissions */
-  .offer { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-  .offer h3 { margin-top: 1.75rem; margin-bottom: .75rem; }
-  .offer > div:last-child h3 { margin-top: 0; }
-  .steps { padding-left: 1.4rem; margin: 0 0 2rem; }
-  .steps li { margin-bottom: .6rem; padding-left: .25rem; }
-  .steps li::marker { font-weight: 700; color: var(--muted); }
-  .services { margin: 0; display: grid; gap: 1.4rem; }
-  .services > div { padding-left: 1rem; border-left: 4px solid var(--c); }
-  .services dt { font-weight: 700; font-size: 1.15rem; }
-  .services dd { margin: .2rem 0 0; color: var(--muted); max-width: 48ch; }
-
-  /* Support */
-  .support { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem 3rem; flex-wrap: wrap; }
-  .support p { margin: 0; }
-  .btn.kofi { display: inline-flex; align-items: center; gap: .5rem; background: var(--cardinal); border-color: var(--cardinal); color: #fff; }
-  .btn.kofi:hover { background: transparent; color: var(--cardinal); }
-
-  /* Contact */
-  .contact { background: var(--surface); }
-  .socials { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
-  footer { padding-block: 2rem; color: var(--muted); font-size: .95rem; }
-
-  @media (max-width: 760px) {
-    .hero { grid-template-columns: 1fr; }
-    .birds { max-width: 240px; order: -1; justify-self: start; }
-    .offer, .about { grid-template-columns: 1fr; }
-    .links { width: 100%; margin-inline: -.85rem; width: calc(100% + 1.7rem); }
-    .links a { font-size: 1rem; }
-  }
-  /* Added Nov 2026 */
-  .status { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; margin-bottom: 1rem; }
-  .status::before { content: ""; width: .65rem; height: .65rem; border-radius: 50%; background: var(--hummer); }
-  .deliver { padding-left: 1.2rem; margin: 0 0 2rem; }
-  .deliver li { margin-bottom: .4rem; }
-  .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem 2rem; margin: 2.5rem 0 0; }
-  .package { padding-left: 1rem; border-left: 4px solid var(--c); }
-  .package p { font-size: 1.05rem; margin-bottom: .4rem; }
-  .package .price { font-weight: 700; color: var(--text); }
-  .brief { grid-column: 1 / -1; margin-top: 1rem; background: var(--surface); border-radius: 12px; padding: clamp(1.25rem, 4vw, 2rem); }
-  .brief form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; }
-  .brief label { display: grid; gap: .3rem; font-weight: 500; }
-  .brief .full { grid-column: 1 / -1; }
-  .brief input, .brief select, .brief textarea { font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .6rem .75rem; width: 100%; }
-  .brief textarea { min-height: 7.5rem; resize: vertical; }
-  .brief input:focus-visible, .brief select:focus-visible, .brief textarea:focus-visible { outline: 3px solid var(--hummer); outline-offset: 1px; }
-  .brief button { cursor: pointer; font: inherit; font-weight: 700; justify-self: start; }
-  .brief .note { color: var(--muted); font-size: .95rem; margin: .25rem 0 0; }
-  .faq { max-width: 70ch; }
-  .faq details { border-bottom: 1px solid var(--line); padding-block: .9rem; }
-  .faq summary { cursor: pointer; font-weight: 700; font-size: 1.15rem; }
-  .faq details p { margin: .6rem 0 0; }
-  @media (max-width: 760px) { .brief form { grid-template-columns: 1fr; } }
-
-  /* Intro: three birds take flight */
-  #intro { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: grid; place-items: center; overflow: hidden; cursor: pointer; transition: opacity .6s ease, visibility .6s; }
-  #intro.done { opacity: 0; visibility: hidden; }
-  #intro canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .intro-logo { position: relative; font-family: "Uncial Antiqua", Georgia, serif; font-size: clamp(2.2rem, 7vw, 4.2rem); color: var(--text); text-align: center; opacity: 0; transform: translateY(14px) scale(.96); filter: blur(10px); transition: opacity .9s ease, transform 1.1s cubic-bezier(.2,.9,.3,1), filter .9s ease; }
-  .intro-logo.show { opacity: 1; transform: none; filter: blur(0); }
-  .intro-logo img { width: min(200px, 50vw); height: auto; display: block; margin: 0 auto .75rem; }
-  .intro-skip { position: absolute; bottom: calc(env(safe-area-inset-bottom, 0px) + 1.5rem); left: 0; right: 0; text-align: center; color: var(--muted); font-size: .9rem; opacity: .7; }
-
-  /* Multi-page additions */
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem; margin-top: 2rem; }
-  .card { padding-left: 1.1rem; border-left: 4px solid var(--c); }
-  .card .tag { color: var(--muted); font-size: .95rem; display: block; margin-bottom: .35rem; }
-  .card p { font-size: 1.05rem; }
-  .feature-home { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
-  footer.site-foot { border-top: 1px solid var(--line); padding-block: 2.5rem; color: var(--muted); font-size: .98rem; }
-  footer.site-foot .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; align-items: flex-start; }
-  footer.site-foot .socials { margin: .5rem 0 0; }
-  @media (max-width: 760px) { .feature-home { grid-template-columns: 1fr; } }
-
-  .page-head { padding-block: clamp(2.5rem, 7vw, 4.5rem) 1rem; }
-  .page-head h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin-bottom: 1rem; }
-  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-  .params { display: flex; flex-wrap: wrap; gap: .4rem; margin: .25rem 0 1rem; padding: 0; list-style: none; }
-  .params li { font-size: .9rem; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .15rem .65rem; }
-  .tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.25rem; margin-top: 2rem; }
-  .track { padding-left: 1.1rem; border-left: 4px solid var(--c); }
-  .track .tag { color: var(--muted); font-size: .95rem; display: block; margin-bottom: .35rem; }
-  .track p { font-size: 1.05rem; }
-  .cta { background: var(--surface); border-radius: 12px; padding: clamp(1.5rem, 4vw, 2.5rem); }
-  @media (max-width: 760px) { .feature { grid-template-columns: 1fr; } }
-  .track .player { margin-top: .25rem; }
-  nav.jump { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: .5rem; margin-top: 1.5rem; padding: 0; }
-  .jump::-webkit-scrollbar { display: none; }
-  .jump a { flex: none; padding: .45rem .9rem; border-radius: 999px; border: 2px solid var(--c); color: var(--text); text-decoration: none; font-weight: 500; font-size: .98rem; white-space: nowrap; }
-  .jump a:hover { background: var(--c); color: var(--bg); }
-  details.more > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1rem; }
-  details.more > summary::-webkit-details-marker { display: none; }
-  details.more > summary h2 { margin: 0; display: inline-flex; align-items: center; gap: .6rem; }
-  details.more > summary h2::after { content: "+"; font-family: "Alegreya Sans", system-ui, sans-serif; font-size: .8em; color: var(--muted); transition: transform .25s; }
-  details.more[open] > summary h2::after { transform: rotate(45deg); }
-  details.more > summary span { color: var(--muted); }
-  details.more[open] > summary { margin-bottom: 1.5rem; }
-  footer.site-foot .foot-kofi { max-width: 34ch; }
-  footer.site-foot .foot-kofi p { margin: 0 0 .75rem; color: var(--text); }
-  footer.site-foot .foot-copy { margin-top: 1.75rem; }
-</style>
-</head>
-<body>
-<header class="site">
-  <nav class="wrap" aria-label="Main">
-    <a class="brand" href="index.html">
-      <img src="No%20Text%20Logo.png" alt="" width="36" height="36" style="object-fit: contain;">
-      TriBird Studios
-    </a>
-    <div class="links">
-      <span class="pill" aria-hidden="true"></span>
-      <ul>
-        <li><a href="portfolio.html" data-c="--hummer" class="active" aria-current="page">Portfolio</a></li>
-        <li><a href="commissions.html" data-c="--cardinal">Commissions</a></li>
-        <li><a href="about.html" data-c="--jay">About</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
-<main id="top">
-<main id="top">
+---
+layout: default
+title: Portfolio | TriBird Studios
+description: "Game tracks in every genre, a D&D commission and OSTs Reimagined: original music by TriBird Studios."
+footer_kofi: true
+nav: portfolio
+---
+{%- assign pf = site.data.portfolio -%}
   <div class="wrap page-head">
     <h1>Portfolio</h1>
-    <p class="lede">Some of my favorite tracks, and they're all pretty different from each other. Every one started from a completely different brief.</p>
+    <p class="lede">{{ pf.lede | escape }}</p>
     <nav class="jump" aria-label="Jump to">
-      <a href="#album" style="--c: var(--jay)">Songs for Games That Don't Exist</a>
-      <a href="#ore" style="--c: var(--cardinal)">Ore</a>
+      <a href="#album" style="--c: var(--jay)">{{ pf.album.title | escape }}</a>
+      <a href="#ore" style="--c: var(--cardinal)">{{ pf.ore.title | escape }}</a>
       <a href="#commission" style="--c: var(--hummer)">D&amp;D campaign</a>
-      <a href="#osts" style="--c: var(--jay)">OSTs Reimagined</a>
+      <a href="#osts" style="--c: var(--jay)">{{ pf.osts.title | escape }}</a>
       <a href="#more" style="--c: var(--cardinal)">Everything else</a>
     </nav>
   </div>
 
   <section id="album">
     <div class="wrap">
-      <h2>Songs for Games That Don't Exist</h2>
-      <p>Every track on this album started with me letting a wheel decide everything: the setting, the lead instrument, the mood, the tempo, the time signature, the key, and one wildcard rule I had to follow. Then I had to make it work. The tags under each track are what the wheel gave me.</p>
+      <h2>{{ pf.album.title | escape }}</h2>
+      <p>{{ pf.album.text | escape }}</p>
       <div class="tracks">
-        <article class="track" style="--c: var(--hummer)">
-          <span class="tag">Underwater world</span>
-          <h3>Beneath the Tides</h3>
-          <ul class="params" aria-label="What the wheel picked"><li>Solo piano</li><li>Contemplative</li><li>Allegretto</li><li>E♭ major</li><li>4/4</li><li>9:4 polyrhythm</li></ul>
-          <p>My favorite track on the album. The wheel gave me a 9 against 4 polyrhythm, so the two hands play at different speeds. They drift apart and only line back up at the end of each cycle, kind of like currents moving under the surface.</p>
-          <div class="player compact"><iframe title="Beneath the Tides by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/track/0uNVMtYj9vyAEi0g1mxCXC?utm_source=generator"></iframe></div>
+        {%- for t in pf.album.tracks %}
+        <article class="track" style="--c: var(--{{ t.color | default: 'jay' }})">
+          <span class="tag">{{ t.tag | escape }}</span>
+          <h3{% if t.aria_label %} aria-label="{{ t.aria_label | escape }}"{% endif %}>{{ t.title | escape }}</h3>
+          {%- if t.params %}
+          <ul class="params" aria-label="What the wheel picked">{% for p in t.params %}<li>{{ p | escape }}</li>{% endfor %}</ul>
+          {%- endif %}
+          <p>{{ t.text | escape }}</p>
+          {%- if t.embed_url %}
+          <div class="player compact"><iframe title="{{ t.aria_label | default: t.title | escape }} by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="{{ t.embed_url }}"></iframe></div>
+          {%- endif %}
         </article>
-        <article class="track" style="--c: var(--jay)">
-          <span class="tag">Magical academy</span>
-          <h3>Candlelight Studies</h3>
-          <ul class="params" aria-label="What the wheel picked"><li>Soprano saxophone</li><li>Contemplative</li><li>63 BPM</li><li>4/8</li><li>A minor</li><li>Planing harmony</li></ul>
-          <p>I pictured a student alone in the library late at night. The chords all move in parallel (planing harmony), which gives the magic this floating feel, like it's not quite following the normal rules.</p>
-          <div class="player compact"><iframe title="Candlelight Studies by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/track/6COKiZ9nUXlJhrburnyOgk?utm_source=generator"></iframe></div>
-        </article>
-        <article class="track" style="--c: var(--cardinal)">
-          <span class="tag">Dark fantasy</span>
-          <h3>Sinister Waltz</h3>
-          <ul class="params" aria-label="What the wheel picked"><li>Bowed guitar</li><li>Graceful</li></ul>
-          <p>Elegant on the surface, with something ominous going on underneath.</p>
-          <div class="player compact"><iframe title="Sinister Waltz by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/track/3P5SozTD6NQJ6RzDSxP3cE?utm_source=generator"></iframe></div>
-        </article>
-        <article class="track" style="--c: var(--hummer)">
-          <span class="tag">Sci-fi space</span>
-          <h3 aria-label="Turn Back">T U R N B A C K</h3>
-          <ul class="params" aria-label="What the wheel picked"><li>Theremin</li><li>Mercurial</li><li>Chain of suspensions</li></ul>
-          <p>A warning from deep space. There's morse code hidden in the track, and every chord leans into the next one without ever really resolving (that's the chain of suspensions).</p>
-          <div class="player compact"><iframe title="Turn Back by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/track/0N28VmcdgRHrgsksRaryle?utm_source=generator"></iframe></div>
-        </article>
-        <article class="track" style="--c: var(--jay)">
-          <span class="tag">Ancient Egypt</span>
-          <h3>Bastet's Dance</h3>
-          <ul class="params" aria-label="What the wheel picked"><li>Bass clarinet</li><li>Romantic</li><li>15/8</li><li>Octatonic scale</li></ul>
-          <p>The wheel landed on 15/8 and an octatonic scale, so it's a dance that keeps you a little off balance and sounds ancient and strange at the same time.</p>
-          <div class="player compact"><iframe title="Bastet's Dance by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/track/1XuNZF8dk51Nl4BAlmEJ2a?utm_source=generator"></iframe></div>
-        </article>
-        <article class="track" style="--c: var(--cardinal)">
-          <span class="tag">Volcanic hellscape</span>
-          <h3>Pressure</h3>
-          <ul class="params" aria-label="What the wheel picked"><li>Cimbalom</li><li>Paranoid</li></ul>
-          <p>Constant, rising tension. The ground's about to give way and the whole track knows it.</p>
-          <div class="player compact"><iframe title="Pressure by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/track/778C1vRnGP1KCiKNDRksCm?utm_source=generator"></iframe></div>
-        </article>
+        {%- endfor %}
       </div>
     </div>
   </section>
 
   <section id="ore">
     <div class="wrap">
-      <h2>Ore</h2>
-      <p>My second concept album. Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone. All twelve tracks are up on my Instagram, and the full album is coming to streaming soon.</p>
-      <a href="https://www.instagram.com/tribirdstudios/">Hear them on Instagram</a>
+      <h2>{{ pf.ore.title | escape }}</h2>
+      <p>{{ pf.ore.text | escape }}</p>
+      {%- if pf.ore.url %}
+      <a href="{{ pf.ore.url }}">{{ pf.ore.link_text | escape }}</a>
+      {%- endif %}
     </div>
   </section>
 
   <section id="commission">
     <div class="wrap">
-      <h2>Commissioned D&amp;D campaign music</h2>
-      <p>My first commission: seven tracks for a private D&amp;D campaign. The first five are each a completely different village with its own sound, but they're all tied together by one leitmotif. Track six brings all five together into one town (kind of inspired by Tarrey Town), and track seven takes things up to the moon. It shows one way I can approach a project: one main theme that connects the whole world around it.</p>
-      <!-- When you have the client's quote, add it here, e.g.:
-      <p><em>"One line from the client."</em> — D&amp;D campaign client</p> -->
+      <h2>{{ pf.commission.title | escape }}</h2>
+      <p>{{ pf.commission.text | escape }}</p>
+      {%- if pf.commission.quote and pf.commission.quote != "" %}
+      <p><em>"{{ pf.commission.quote | escape }}"</em> — {{ pf.commission.quote_by | escape }}</p>
+      {%- endif %}
     </div>
   </section>
 
   <section id="osts">
     <div class="wrap">
-      <h2>OSTs Reimagined</h2>
-      <p>For this series I write a brand new track for a real game, like the original soundtrack never existed. Same world, totally new music.</p>
+      <h2>{{ pf.osts.title | escape }}</h2>
+      <p>{{ pf.osts.text | escape }}</p>
       <div class="tracks">
-        <article class="track" style="--c: var(--hummer)">
-          <span class="tag">Inspired by Hollow Knight</span>
-          <h3>Deepnest</h3>
-          <p>Slow, patient and dark. Cello over blurry piano, with one note that lifts things just a little, like something glowing where nothing should be.</p>
+        {%- for t in pf.osts.tracks %}
+        <article class="track" style="--c: var(--{{ t.color | default: 'jay' }})">
+          <span class="tag">{{ t.tag | escape }}</span>
+          <h3>{{ t.title | escape }}</h3>
+          <p>{{ t.text | escape }}</p>
+          {%- if t.embed_url %}
+          <div class="player compact"><iframe title="{{ t.title | escape }} by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="{{ t.embed_url }}"></iframe></div>
+          {%- endif %}
         </article>
-        <article class="track" style="--c: var(--jay)">
-          <span class="tag">Inspired by Stellaris</span>
-          <h3>Exploration</h3>
-          <p>That feeling of jumping into an unknown star system for the first time. Big, hopeful, and a little mysterious.</p>
-        </article>
-        <article class="track" style="--c: var(--cardinal)">
-          <span class="tag">Inspired by Wii Sports</span>
-          <h3>Main theme</h3>
-          <p>Big band horns mixed with modern synths, all built around a rhythm that feels like a swing or a serve. Completely original, and it loops.</p>
-        </article>
+        {%- endfor %}
       </div>
-      <p style="margin-top: 2rem"><a href="https://www.instagram.com/tribirdstudios/">Hear the series on Instagram</a></p>
+      {%- if pf.osts.url %}
+      <p style="margin-top: 2rem"><a href="{{ pf.osts.url }}">{{ pf.osts.link_text | escape }}</a></p>
+      {%- endif %}
     </div>
   </section>
 
@@ -357,103 +87,29 @@
       <details class="more">
         <summary><h2>Everything else</h2><span>All my releases, plus the latest videos</span></summary>
       <div class="player">
-        <!-- Spotify artist player. To show a single album or track instead: in Spotify, Share → Embed, and copy the src URL here -->
         <iframe title="TriBird Studios on Spotify" loading="lazy"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          src="https://open.spotify.com/embed/artist/2xtLBoMBWMckBk6G54xV4P?utm_source=generator"></iframe>
+          src="{{ pf.more.embed_url }}"></iframe>
       </div>
-      <!-- GAME-READY DEMO: once your loop-and-layers video is on YouTube, paste its embed link below and delete the two comment lines around this block.
-      <h3 class="videos-title">Game-ready demo</h3>
-      <p>Here's one track the way it would actually work in a game. It loops seamlessly, and layers come in as things go from exploring to combat.</p>
-      <div class="video"><iframe title="Game-ready demo" loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe></div>
-      -->
+      {%- if pf.more.videos_show %}
+      {%- assign playlist = pf.more.channel_id | remove_first: "UC" | prepend: "UU" %}
       <div class="videos">
         <h3 class="videos-title">Latest videos</h3>
-      <!-- YouTube uploads playlist: updates automatically when a new video is posted -->
       <div class="video">
         <iframe title="Latest TriBird Studios videos" loading="lazy"
           allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-          src="https://www.youtube.com/embed/videoseries?list=UU4rribjjryeXP6hMq0GTLIw" allowfullscreen></iframe>
+          src="https://www.youtube.com/embed/videoseries?list={{ playlist }}" allowfullscreen></iframe>
       </div>
       </div>
+      {%- endif %}
       </details>
     </div>
   </section>
 
   <section>
     <div class="wrap cta">
-      <h2>Got a world that needs music?</h2>
-      <p>Tell me about your project and I'll get back to you within two days.</p>
-      <a class="btn primary" href="commissions.html#brief">Tell me about your project</a>
+      <h2>{{ site.data.home.cta_title | escape }}</h2>
+      <p>{{ pf.cta_text | escape }}</p>
+      <a class="btn primary" href="/commissions.html#brief">Tell me about your project</a>
     </div>
   </section>
-</main>
-
-<footer class="site-foot">
-  <div class="wrap foot">
-    <div>
-      <strong>TriBird Studios</strong><br>
-      <a href="mailto:hello@tribirdstudios.com">hello@tribirdstudios.com</a>
-      <ul class="socials">
-        <li><a href="https://soundcloud.com/tribirdstudios">SoundCloud</a></li>
-        <li><a href="https://open.spotify.com/artist/2xtLBoMBWMckBk6G54xV4P">Spotify</a></li>
-        <li><a href="https://www.instagram.com/tribirdstudios/">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@TriBirdStudios">YouTube</a></li>
-        <li><a href="https://ko-fi.com/tribirdstudios">Ko-fi</a></li>
-      </ul>
-    </div>
-    <div class="foot-kofi">
-      <p>Enjoying the music? You can support TriBird on Ko-fi, and members get their name on a wheel slice.</p>
-      <a class="btn kofi" href="https://ko-fi.com/tribirdstudios"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1 1 1 1 2M12 3c0 1 1 1 1 2"/></svg>Support on Ko-fi</a>
-    </div>
-  </div>
-  <div class="wrap foot-copy">© <span id="year">2026</span> TriBird Studios</div>
-</footer>
-
-<script>
-  (function () {
-    var header = document.querySelector('header.site');
-    var box = header.querySelector('.links');
-    var pill = box.querySelector('.pill');
-    var a = box.querySelector('a.active');
-    function place() {
-      if (!a) return;
-      pill.style.width = a.offsetWidth + 'px';
-      pill.style.height = a.offsetHeight + 'px';
-      pill.style.transform = 'translate(' + a.offsetLeft + 'px,' + a.offsetTop + 'px)';
-      pill.style.backgroundColor = 'var(' + a.dataset.c + ')';
-      pill.style.opacity = 1;
-    }
-    function scrolled() { header.classList.toggle('scrolled', window.scrollY > 8); }
-    window.addEventListener('scroll', scrolled, { passive: true });
-    window.addEventListener('resize', place);
-    if (document.fonts) document.fonts.ready.then(place);
-    place(); scrolled();
-    if (a && box.scrollWidth > box.clientWidth) box.scrollLeft = a.offsetLeft - box.clientWidth / 2 + a.offsetWidth / 2;
-  })();
-  (function () {
-    var form = document.getElementById('brief-form');
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var f = form.elements;
-      var lines = [
-        'Name: ' + f.name.value, 'Email: ' + f.email.value, 'Project type: ' + f.type.value,
-        'Engine: ' + (f.engine.value || '-'), 'Amount of music: ' + f.amount.value,
-        'Deadline: ' + (f.deadline.value || '-'), 'Budget: ' + f.budget.value,
-        'Link: ' + (f.link.value || '-'), '', f.details.value
-      ];
-      var subject = 'Project brief: ' + f.type.value + ' (' + f.name.value + ')';
-      location.href = 'mailto:hello@tribirdstudios.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-    });
-  })();
-  (function () {
-    var more = document.querySelector('details.more');
-    function check() { if (location.hash === '#more' && more) more.open = true; }
-    addEventListener('hashchange', check); check();
-  })();
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9d699a7fc7a8421c90a7695dc02c14a3"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
-</html>

@@ -1,0 +1,98 @@
+lede: Some of my favorite tracks, and they're all pretty different from each other. Every one started from a completely different brief.
+album:
+  title: Songs for Games That Don't Exist
+  text: 'Every track on this album started with me letting a wheel decide everything: the setting, the lead instrument, the mood, the tempo, the time signature, the key, and one wildcard rule I had to follow. Then I had to make it work. The tags under each track are what the wheel gave me.'
+  tracks:
+  - tag: Underwater world
+    title: Beneath the Tides
+    params:
+    - Solo piano
+    - Contemplative
+    - Allegretto
+    - E♭ major
+    - 4/4
+    - 9:4 polyrhythm
+    text: My favorite track on the album. The wheel gave me a 9 against 4 polyrhythm, so the two hands play at different speeds. They drift apart and only line back up at the end of each cycle, kind of like currents moving under the surface.
+    embed_url: https://open.spotify.com/embed/track/0uNVMtYj9vyAEi0g1mxCXC?utm_source=generator
+    color: hummer
+  - tag: Magical academy
+    title: Candlelight Studies
+    params:
+    - Soprano saxophone
+    - Contemplative
+    - 63 BPM
+    - 4/8
+    - A minor
+    - Planing harmony
+    text: I pictured a student alone in the library late at night. The chords all move in parallel (planing harmony), which gives the magic this floating feel, like it's not quite following the normal rules.
+    embed_url: https://open.spotify.com/embed/track/6COKiZ9nUXlJhrburnyOgk?utm_source=generator
+    color: jay
+  - tag: Dark fantasy
+    title: Sinister Waltz
+    params:
+    - Bowed guitar
+    - Graceful
+    text: Elegant on the surface, with something ominous going on underneath.
+    embed_url: https://open.spotify.com/embed/track/3P5SozTD6NQJ6RzDSxP3cE?utm_source=generator
+    color: cardinal
+  - tag: Sci-fi space
+    title: T U R N B A C K
+    aria_label: Turn Back
+    params:
+    - Theremin
+    - Mercurial
+    - Chain of suspensions
+    text: A warning from deep space. There's morse code hidden in the track, and every chord leans into the next one without ever really resolving (that's the chain of suspensions).
+    embed_url: https://open.spotify.com/embed/track/0N28VmcdgRHrgsksRaryle?utm_source=generator
+    color: hummer
+  - tag: Ancient Egypt
+    title: Bastet's Dance
+    params:
+    - Bass clarinet
+    - Romantic
+    - 15/8
+    - Octatonic scale
+    text: The wheel landed on 15/8 and an octatonic scale, so it's a dance that keeps you a little off balance and sounds ancient and strange at the same time.
+    embed_url: https://open.spotify.com/embed/track/1XuNZF8dk51Nl4BAlmEJ2a?utm_source=generator
+    color: jay
+  - tag: Volcanic hellscape
+    title: Pressure
+    params:
+    - Cimbalom
+    - Paranoid
+    text: Constant, rising tension. The ground's about to give way and the whole track knows it.
+    embed_url: https://open.spotify.com/embed/track/778C1vRnGP1KCiKNDRksCm?utm_source=generator
+    color: cardinal
+ore:
+  title: Ore
+  text: My second concept album. Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone. All twelve tracks are up on my Instagram, and the full album is coming to streaming soon.
+  link_text: Hear them on Instagram
+  url: https://www.instagram.com/tribirdstudios/
+commission:
+  title: Commissioned D&D campaign music
+  text: 'My first commission: seven tracks for a private D&D campaign. The first five are each a completely different village with its own sound, but they''re all tied together by one leitmotif. Track six brings all five together into one town (kind of inspired by Tarrey Town), and track seven takes things up to the moon. It shows one way I can approach a project: one main theme that connects the whole world around it.'
+  quote: ''
+  quote_by: D&D campaign client
+osts:
+  title: OSTs Reimagined
+  text: For this series I write a brand new track for a real game, like the original soundtrack never existed. Same world, totally new music.
+  tracks:
+  - tag: Inspired by Hollow Knight
+    title: Deepnest
+    text: Slow, patient and dark. Cello over blurry piano, with one note that lifts things just a little, like something glowing where nothing should be.
+    color: hummer
+  - tag: Inspired by Stellaris
+    title: Exploration
+    text: That feeling of jumping into an unknown star system for the first time. Big, hopeful, and a little mysterious.
+    color: jay
+  - tag: Inspired by Wii Sports
+    title: Main theme
+    text: Big band horns mixed with modern synths, all built around a rhythm that feels like a swing or a serve. Completely original, and it loops.
+    color: cardinal
+  link_text: Hear the series on Instagram
+  url: https://www.instagram.com/tribirdstudios/
+more:
+  embed_url: https://open.spotify.com/embed/artist/2xtLBoMBWMckBk6G54xV4P?utm_source=generator
+  videos_show: true
+  channel_id: UC4rribjjryeXP6hMq0GTLIw
+cta_text: Tell me about your project and I'll get back to you within two days.

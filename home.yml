@@ -1,0 +1,35 @@
+hero_lines:
+  - "Original music for your worlds. Games, films, D&D campaigns. Music is what gives a world its shape."
+  - "I can write in pretty much any genre, and my tracks are ready to go straight into your game, with seamless loops."
+feature:
+  title: Beneath the Tides
+  text: "My favorite track from Songs for Games That Don't Exist. If you only listen to one, make it this one."
+  embed_url: https://open.spotify.com/embed/track/0uNVMtYj9vyAEi0g1mxCXC?utm_source=generator
+work_title: What I've been making
+cards:
+  - tag: Concept album, 12 tracks
+    title: Songs for Games That Don't Exist
+    text: I let a wheel decide the setting, instrument, mood and more for every track. Then I had to make it work.
+    link_text: Listen
+    url: /portfolio.html#album
+    color: jay
+  - tag: Series
+    title: OSTs Reimagined
+    text: Brand new tracks for real games, like the original soundtrack never existed.
+    link_text: See the series
+    url: /portfolio.html#osts
+    color: hummer
+  - tag: Commission, 7 tracks
+    title: Commissioned D&D campaign music
+    text: Five totally different villages tied together by one leitmotif, a Tarrey Town-inspired track that brings them all together, and one final track on the moon.
+    link_text: Read more
+    url: /portfolio.html#commission
+    color: cardinal
+  - tag: Concept album, 12 tracks
+    title: Ore
+    text: Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone.
+    link_text: Listen
+    url: /portfolio.html#ore
+    color: jay
+cta_title: Got a world that needs music?
+support_text: "TriBird is just me, so every bit of support helps me keep making music. Ko-fi members get their name on a slice of the wheel in an actual episode, so you might end up deciding what I compose next."

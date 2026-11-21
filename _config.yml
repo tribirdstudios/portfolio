@@ -3,13 +3,12 @@ title: TriBird Studios
 url: https://www.tribirdstudios.com
 timezone: Europe/London
 permalink: /blog/:title/
-future: true        # a post dated "now" never gets hidden by a time-zone gap
+future: true
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
 exclude:
   - README.md
-  - .pages.yml
   - Gemfile
   - Gemfile.lock

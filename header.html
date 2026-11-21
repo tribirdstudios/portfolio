@@ -1,0 +1,19 @@
+<header class="site">
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="/">
+      <img src="/No%20Text%20Logo.png" alt="" width="36" height="36" style="object-fit: contain;">
+      TriBird Studios
+    </a>
+    <div class="links">
+      <span class="pill" aria-hidden="true"></span>
+      <ul>
+        <li><a href="/portfolio.html" data-c="--hummer"{% if page.nav == "portfolio" %} class="active" aria-current="page"{% endif %}>Portfolio</a></li>
+        <li><a href="/commissions.html" data-c="--cardinal"{% if page.nav == "commissions" %} class="active" aria-current="page"{% endif %}>Commissions</a></li>
+        <li><a href="/about.html" data-c="--jay"{% if page.nav == "about" %} class="active" aria-current="page"{% endif %}>About</a></li>
+        {%- if site.posts.size > 0 %}
+        <li><a href="/blog/" data-c="--hummer"{% if page.nav == "blog" %} class="active" aria-current="page"{% endif %}>Blog</a></li>
+        {%- endif %}
+      </ul>
+    </div>
+  </nav>
+</header>
