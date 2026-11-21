@@ -15,123 +15,215 @@ content:
         options:
           values:
             - { value: open, label: "Open" }
-            - { value: waitlist, label: "Waitlist (booking for later)" }
+            - { value: limited, label: "Limited availability" }
             - { value: closed, label: "Closed" }
-      - { name: status_open, label: "Badge text when Open", type: string }
-      - { name: status_waitlist, label: "Badge text when Waitlist", type: string }
-      - { name: status_closed, label: "Badge text when Closed", type: string }
-      - name: closed_message
-        label: "Note above the form when not Open"
-        type: text
+      - name: open
+        label: "Text when Open"
+        type: object
+        fields:
+          - { name: badge, label: "Badge (small label on the Commissions page)", type: string }
+          - { name: commissions_text, label: "Paragraph on the Commissions page", type: text }
+          - { name: home_text, label: "Paragraph on the Home page", type: text }
+      - name: limited
+        label: "Text when Limited availability"
+        type: object
+        fields:
+          - { name: badge, label: "Badge (small label on the Commissions page)", type: string }
+          - { name: commissions_text, label: "Paragraph on the Commissions page", type: text }
+          - { name: home_text, label: "Paragraph on the Home page", type: text }
+      - name: closed
+        label: "Text when Closed"
+        type: object
+        fields:
+          - { name: badge, label: "Badge (small label on the Commissions page)", type: string }
+          - { name: commissions_text, label: "Paragraph on the Commissions page", type: text }
+          - { name: home_text, label: "Paragraph on the Home page", type: text }
 
   - name: home
-    label: Home page text
+    label: Home page
     type: file
     path: _data/home.yml
     fields:
-      - { name: email, label: "Contact email", type: string }
-      - { name: hero_lede, label: "Intro line under the title", type: text }
-      - { name: hero_note, label: "Small note under the buttons", type: string }
-      - name: release
-        label: "New release banner"
+      - { name: hero_lines, label: "Intro lines under the title", type: text, list: true }
+      - name: feature
+        label: "Featured track"
         type: object
         fields:
-          - { name: show, label: "Show the banner", type: boolean }
-          - { name: tag, label: "Tag (e.g. New release)", type: string }
-          - { name: title, label: "Title", type: string }
-          - { name: text, label: "Short description", type: text }
-          - { name: link_text, label: "Link text", type: string }
-          - { name: url, label: "Link address", type: string }
-      - { name: commissions_intro, label: "Commissions intro", type: text }
-      - name: steps
-        label: "How it works (steps)"
-        type: text
-        list: true
-        description: "Use **double stars** around the bold part."
-      - { name: form_intro, label: "Text at the top of the form", type: text }
-      - { name: budget_options, label: "Budget choices in the form", type: string, list: true }
-      - name: about
-        label: "About (one entry per paragraph)"
-        type: text
-        list: true
-        description: "Links look like [words](https://address)."
-      - { name: about_photo, label: "About photo (optional)", type: image }
-      - { name: contact_text, label: "Contact line", type: string }
-      - { name: support_title, label: "Support heading", type: string }
-      - { name: support_text, label: "Support text", type: text }
-      - { name: kofi_url, label: "Ko-fi address", type: string }
-
-  - name: listen
-    label: Listen (tracks and videos)
-    type: file
-    path: _data/listen.yml
-    fields:
-      - { name: intro, label: "Line above the player", type: string }
-      - name: players
-        label: "Players (each one is a tab)"
-        type: object
-        list: true
-        fields:
-          - { name: name, label: "Tab name", type: string }
+          - { name: title, label: "Track name", type: string }
+          - { name: text, label: "Why this one", type: text }
           - name: embed_url
-            label: "Embed address"
+            label: "Spotify embed address"
             type: string
-            description: "On Spotify, SoundCloud or YouTube: Share, then Embed, then copy the address after src=."
-      - name: videos
-        label: "YouTube videos"
-        type: object
-        fields:
-          - { name: show, label: "Show the latest videos", type: boolean }
-          - { name: channel_id, label: "Channel ID (starts with UC)", type: string }
-
-  - name: projects
-    label: Projects
-    type: file
-    path: _data/projects.yml
-    fields:
-      - name: items
-        label: Projects
+            description: "On Spotify: Share, Embed, then copy the address after src=."
+      - { name: work_title, label: "Heading above the cards", type: string }
+      - name: cards
+        label: "Cards"
         type: object
         list: true
         fields:
           - { name: title, label: "Title", type: string }
-          - { name: tag, label: "Small label (e.g. Concept album, 12 tracks)", type: string }
+          - { name: tag, label: "Small label", type: string }
+          - { name: text, label: "Description", type: text }
+          - { name: link_text, label: "Link text", type: string }
+          - { name: url, label: "Link address (e.g. /portfolio.html#ore)", type: string }
+          - name: color
+            label: Colour
+            type: select
+            options:
+              values:
+                - { value: jay, label: Blue }
+                - { value: cardinal, label: Red }
+                - { value: hummer, label: Green }
+      - { name: cta_title, label: "Heading above the commission button", type: string }
+      - { name: support_text, label: "Ko-fi support text", type: text }
+
+  - name: portfolio
+    label: Portfolio
+    type: file
+    path: _data/portfolio.yml
+    fields:
+      - { name: lede, label: "Intro at the top", type: text }
+      - name: album
+        label: "Album with players"
+        type: object
+        fields:
+          - { name: title, label: "Title", type: string }
+          - { name: text, label: "Description", type: text }
+          - name: tracks
+            label: "Tracks"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Track name", type: string }
+              - { name: aria_label, label: "Plain spelling (only if the title is styled, like T U R N B A C K)", type: string }
+              - { name: tag, label: "Small label (e.g. Underwater world)", type: string }
+              - { name: params, label: "What the wheel picked (one per line)", type: string, list: true }
+              - { name: text, label: "About the track", type: text }
+              - name: embed_url
+                label: "Spotify embed address"
+                type: string
+                description: "On Spotify: the track, Share, Embed, then copy the address after src=."
+              - name: color
+                label: Colour
+                type: select
+                options:
+                  values:
+                    - { value: jay, label: Blue }
+                    - { value: cardinal, label: Red }
+                    - { value: hummer, label: Green }
+      - name: ore
+        label: "Ore"
+        type: object
+        fields:
+          - { name: title, label: "Title", type: string }
           - { name: text, label: "Description", type: text }
           - { name: link_text, label: "Link text", type: string }
           - { name: url, label: "Link address", type: string }
-          - name: color
-            label: "Colour"
-            type: select
-            options:
-              values:
-                - { value: jay, label: "Blue" }
-                - { value: cardinal, label: "Red" }
-                - { value: hummer, label: "Green" }
+      - name: commission
+        label: "Commissioned D&D music"
+        type: object
+        fields:
+          - { name: title, label: "Title", type: string }
+          - { name: text, label: "Description", type: text }
+          - { name: quote, label: "Client quote (leave empty for none)", type: text }
+          - { name: quote_by, label: "Who said it", type: string }
+      - name: osts
+        label: "OSTs Reimagined"
+        type: object
+        fields:
+          - { name: title, label: "Title", type: string }
+          - { name: text, label: "Description", type: text }
+          - name: tracks
+            label: "Tracks"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Track name", type: string }
+              - { name: tag, label: "Small label (e.g. Inspired by Hollow Knight)", type: string }
+              - { name: text, label: "About the track", type: text }
+              - { name: embed_url, label: "Spotify embed address (optional)", type: string }
+              - name: color
+                label: Colour
+                type: select
+                options:
+                  values:
+                    - { value: jay, label: Blue }
+                    - { value: cardinal, label: Red }
+                    - { value: hummer, label: Green }
+          - { name: link_text, label: "Link text", type: string }
+          - { name: url, label: "Link address", type: string }
+      - name: more
+        label: "Everything else"
+        type: object
+        fields:
+          - { name: embed_url, label: "Spotify embed address", type: string }
+          - { name: videos_show, label: "Show the latest YouTube videos", type: boolean }
+          - { name: channel_id, label: "YouTube channel ID (starts with UC)", type: string }
+      - { name: cta_text, label: "Text above the bottom button", type: text }
 
-  - name: services
-    label: What I can make
+  - name: commissions
+    label: Commissions page
     type: file
-    path: _data/services.yml
+    path: _data/commissions.yml
     fields:
-      - name: items
-        label: Services
+      - { name: intro, label: "Intro paragraph", type: text }
+      - { name: deliver, label: "What you'll get (one per line)", type: text, list: true }
+      - { name: steps, label: "How it works (use **double stars** for the bold start)", type: text, list: true }
+      - name: services
+        label: "What I can make"
         type: object
         list: true
         fields:
           - { name: title, label: "Title", type: string }
           - { name: text, label: "Description", type: text }
           - name: color
-            label: "Colour"
+            label: Colour
             type: select
             options:
               values:
-                - { value: jay, label: "Blue" }
-                - { value: cardinal, label: "Red" }
-                - { value: hummer, label: "Green" }
-                - { value: muted, label: "Grey" }
+                - { value: jay, label: Blue }
+                - { value: cardinal, label: Red }
+                - { value: hummer, label: Green }
+                - { value: muted, label: Grey }
+      - name: packages
+        label: "Packages"
+        type: object
+        list: true
+        fields:
+          - { name: title, label: "Title", type: string }
+          - { name: text, label: "Description", type: text }
+          - name: color
+            label: Colour
+            type: select
+            options:
+              values:
+                - { value: jay, label: Blue }
+                - { value: cardinal, label: Red }
+                - { value: hummer, label: Green }
+                - { value: muted, label: Grey }
+      - { name: pricing_note, label: "Line about pricing", type: text }
+      - { name: brief_intro, label: "Text above the form", type: text }
+      - { name: budget_options, label: "Budget choices in the form", type: string, list: true }
+      - name: faq
+        label: "FAQ"
+        type: object
+        list: true
+        fields:
+          - { name: q, label: "Question", type: string }
+          - { name: a, label: "Answer", type: text }
+
+  - name: about
+    label: About page
+    type: file
+    path: _data/about.yml
+    fields:
+      - { name: paragraphs, label: "About text (one entry per paragraph; links look like [words](https://address))", type: text, list: true }
+      - { name: photo, label: "Photo (optional)", type: image }
+      - { name: support_text, label: "Ko-fi text", type: text }
+      - { name: contact_text, label: "Contact line", type: string }
 
   - name: links
-    label: Social links
+    label: Social links and contact
     type: file
     path: _data/links.yml
     fields:
@@ -142,18 +234,16 @@ content:
         fields:
           - { name: name, label: "Name", type: string }
           - { name: url, label: "Address", type: string }
-          - name: icon
-            label: "Icon"
-            type: select
-            options:
-              values:
-                - { value: soundcloud, label: SoundCloud }
-                - { value: spotify, label: Spotify }
-                - { value: instagram, label: Instagram }
-                - { value: youtube, label: YouTube }
-                - { value: kofi, label: Ko-fi }
-                - { value: other, label: "Other (link icon)" }
-          - { name: in_header, label: "Show in the top bar", type: boolean }
+          - { name: contact_name, label: "Different name on the About page (optional)", type: string }
+
+  - name: settings
+    label: Email and Ko-fi
+    type: file
+    path: _data/site.yml
+    fields:
+      - { name: email, label: "Contact email", type: string }
+      - { name: kofi_url, label: "Ko-fi address", type: string }
+      - { name: footer_kofi_text, label: "Ko-fi text in the footer", type: text }
 
   - name: posts
     label: Blog posts
