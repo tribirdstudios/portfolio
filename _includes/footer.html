@@ -1,0 +1,20 @@
+<footer class="site-foot">
+  <div class="wrap foot">
+    <div>
+      <strong>TriBird Studios</strong><br>
+      <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>
+      <ul class="socials">
+        {%- for l in site.data.links.items %}
+        <li><a href="{{ l.url }}">{{ l.name | escape }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- if page.footer_kofi %}
+    <div class="foot-kofi">
+      <p>{{ site.data.site.footer_kofi_text | escape }}</p>
+      <a class="btn kofi" href="{{ site.data.site.kofi_url }}"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1 1 1 1 2M12 3c0 1 1 1 1 2"/></svg>Support on Ko-fi</a>
+    </div>
+    {%- endif %}
+  </div>
+  <div class="wrap foot-copy">© <span id="year">2026</span> TriBird Studios</div>
+</footer>
