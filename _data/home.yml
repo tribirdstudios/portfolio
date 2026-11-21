@@ -1,30 +1,35 @@
-email: hello@tribirdstudios.com
-hero_lede: "Original music for your worlds. Games, films, D&D campaigns. Music is what gives a world its shape."
-hero_note: "Tell me what you're making and I'll reply personally."
-release:
-  show: true
-  tag: New release
-  title: "Songs for Games That Don't Exist, Vol. I"
-  text: Twelve tracks, each one decided by a spin of the wheels.
-  link_text: Listen now
-  url: https://open.spotify.com/album/3WBeSrrkZa0GJB52iRVq2J
-commissions_intro: "I write original music for indie games, short films, documentaries, tabletop campaigns, and anything else that needs a soundtrack. Every piece is written specifically for your project."
-steps:
-  - "**Tell me about your project.** The genre, mood, any references you like, and where the music will be used."
-  - "**I send a sketch.** A short draft of the main idea, so we agree on a direction early."
-  - "**We refine it together.** We go through revisions until it fits, and then I deliver the final files in whatever format you need."
-form_intro: "Tell me about your project and I'll get back to you personally, usually within a few days."
-budget_options:
-  - Under $150
-  - $150 – $500
-  - $500 – $1,500
-  - $1,500+
-  - Not sure yet
-about:
-  - "I'm Nick, the musician and composer behind TriBird Studios. Music has always been a major part of my life, with 20 years of piano training, 15 of violin, and some experience on other instruments. During my studies I won several local piano competitions and trained under the composer and pianist [Joseph Fennimore](https://en.wikipedia.org/wiki/Joseph_Fennimore)."
-  - "I started composing to combine two of my passions: music, and video games and film. I believe music can lift visual media to a new level, creating deeper immersion and emotion for the audience."
-about_photo: ""
-contact_text: "The fastest way to reach me is email:"
-support_title: Support TriBird Studios
-support_text: "TriBird Studios is independent. If you enjoy the music and want to help fund future albums, you can support me on Ko-fi."
-kofi_url: https://ko-fi.com/tribirdstudios
+hero_lines:
+  - "Original music for your worlds. Games, films, D&D campaigns. Music is what gives a world its shape."
+  - "I can write in pretty much any genre, and my tracks are ready to go straight into your game, with seamless loops."
+feature:
+  title: Beneath the Tides
+  text: "My favorite track from Songs for Games That Don't Exist. If you only listen to one, make it this one."
+  embed_url: https://open.spotify.com/embed/track/0uNVMtYj9vyAEi0g1mxCXC?utm_source=generator
+work_title: What I've been making
+cards:
+  - tag: Concept album, 12 tracks
+    title: Songs for Games That Don't Exist
+    text: I let a wheel decide the setting, instrument, mood and more for every track. Then I had to make it work.
+    link_text: Listen
+    url: /portfolio.html#album
+    color: jay
+  - tag: Series
+    title: OSTs Reimagined
+    text: Brand new tracks for real games, like the original soundtrack never existed.
+    link_text: See the series
+    url: /portfolio.html#osts
+    color: hummer
+  - tag: Commission, 7 tracks
+    title: Commissioned D&D campaign music
+    text: Five totally different villages tied together by one leitmotif, a Tarrey Town-inspired track that brings them all together, and one final track on the moon.
+    link_text: Read more
+    url: /portfolio.html#commission
+    color: cardinal
+  - tag: Concept album, 12 tracks
+    title: Ore
+    text: Twelve tracks ordered by depth, from emerald down to ancient debris, tied together by a pickaxe theme on xylophone.
+    link_text: Listen
+    url: /portfolio.html#ore
+    color: jay
+cta_title: Got a world that needs music?
+support_text: "TriBird is just me, so every bit of support helps me keep making music. Ko-fi members get their name on a slice of the wheel in an actual episode, so you might end up deciding what I compose next."

@@ -1,25 +1,61 @@
 ---
 layout: default
-title: Blog | TriBird Studios
-description: "Behind-the-scenes notes from TriBird Studios: how the music gets made, what I'm working on, and what I'm learning."
-nav: blog
+title: "TriBird Studios — Original music for your worlds | Game composer"
+description: "I'm Nick, a composer writing original music for games, films and D&D campaigns. Any genre, with seamless loops."
+nav: home
 ---
-<div class="wrap blog-head">
-  <h1>Blog</h1>
-  <p>Notes on how the music gets made.</p>
-</div>
-<div class="wrap">
-  {%- if site.posts.size > 0 %}
-  <ul class="post-list">
-    {%- for post in site.posts %}
-    <li>
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
-      <h2><a href="{{ post.url }}">{{ post.title | escape }}</a></h2>
-      <p>{{ post.description | default: post.excerpt | strip_html | truncate: 180 }}</p>
-    </li>
-    {%- endfor %}
-  </ul>
-  {%- else %}
-  <p class="empty">No posts yet. Check back soon.</p>
-  {%- endif %}
-</div>
+{%- assign hm = site.data.home -%}
+{%- assign st = site.data.status -%}
+{%- assign cur = st[st.availability] -%}
+  <div class="wrap hero">
+    <div>
+      <h1>TriBird Studios</h1>
+      {%- for line in hm.hero_lines %}
+      <p class="lede">{{ line | escape }}</p>
+      {%- endfor %}
+      <div class="actions">
+        <a class="btn primary" href="/commissions.html">Commission music</a>
+        <a class="btn" href="/portfolio.html">See my portfolio</a>
+      </div>
+    </div>
+    <img class="birds" src="/No%20Text%20Logo.png" alt="TriBird Studios logo">
+  </div>
+
+  <section id="listen">
+    <div class="wrap feature-home">
+      <div>
+        <h2>{{ hm.feature.title | escape }}</h2>
+        <p>{{ hm.feature.text | escape }}</p>
+      </div>
+      <div class="player compact">
+        <iframe title="{{ hm.feature.title | escape }} by TriBird Studios" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          src="{{ hm.feature.embed_url }}"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>{{ hm.work_title | escape }}</h2>
+      <div class="cards">
+        {%- for c in hm.cards %}
+        <article class="card" style="--c: var(--{{ c.color | default: 'jay' }})">
+          <span class="tag">{{ c.tag | escape }}</span>
+          <h3>{{ c.title | escape }}</h3>
+          <p>{{ c.text | escape }}</p>
+          <a href="{{ c.url }}">{{ c.link_text | escape }}</a>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cta">
+      <h2>{{ hm.cta_title | escape }}</h2>
+      <p>{{ cur.home_text | escape }}</p>
+      <a class="btn primary" href="/commissions.html#brief">Tell me about your project</a>
+    </div>
+  </section>
+
+{% assign support_text = hm.support_text %}{% include support.html %}
